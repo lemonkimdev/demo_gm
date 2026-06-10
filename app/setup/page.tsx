@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const steps = [
   "NFC Tools 앱에서 Write > Add Record > URL 선택",
-  "Vercel 배포 URL + /nfc/gm-001 을 입력",
+  "배포 링크 입력",
   "NTAG215 스티커에 Write",
   "스마트폰을 태그하면 데모 페이지가 열린다",
 ];
