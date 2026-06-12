@@ -1,19 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const iicLinks = [
-  ["/iic/points", "points"],
-  ["/iic/drop", "drop"],
-  ["/iic/passport", "passport"],
-  ["/iic/subscription", "subscription"],
-  ["/iic/checkout", "checkout"],
-  ["/iic/collectibles", "collectibles"],
-  ["/iic/b2b", "b2b"],
-  ["/iic/authenticate", "authenticate"],
-  ["/iic/gift", "gift"],
-  ["/iic/genesis", "genesis"],
+  ["/iic/drop", "Drop"],
+  ["/iic/checkout", "Checkout"],
+  ["/iic/points", "Points"],
+  ["/iic/authenticate", "Authenticate"],
+  ["/iic/gift", "Gift"],
+  ["/iic/passport", "Passport"],
+  ["/iic/subscription", "Subscription"],
+  ["/iic/collectibles", "Collectibles"],
+  ["/iic/genesis", "Genesis"],
+  ["/iic/b2b", "B2b"],
 ];
 
 const darkIicVars = {
@@ -37,6 +38,7 @@ const lightIicVars = {
 };
 
 export default function IICLayout({ children }) {
+  const pathname = usePathname();
   const [theme, setTheme] = useState("dark");
   const isDark = theme === "dark";
   const iicVars = isDark ? darkIicVars : lightIicVars;
@@ -106,28 +108,42 @@ export default function IICLayout({ children }) {
             padding: "0 18px 14px",
           }}
         >
-          {iicLinks.map(([href, label]) => (
-            <Link
-              key={href}
-              href={href}
-              style={{
-                minHeight: 36,
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "1px solid var(--iic-border)",
-                borderRadius: 999,
-                background: isDark ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.55)",
-                color: "var(--iic-text-muted)",
-                fontSize: 13,
-                fontWeight: 700,
-                padding: "0 13px",
-                textDecoration: "none",
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+          {iicLinks.map(([href, label]) => {
+            const isActive = pathname === href;
+
+            return (
+              <Link
+                key={href}
+                href={href}
+                style={{
+                  minHeight: 36,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: isActive
+                    ? "1px solid rgba(184,146,42,0.22)"
+                    : "1px solid var(--iic-border)",
+                  borderRadius: 999,
+                  background: isActive
+                    ? isDark
+                      ? "rgba(184,146,42,0.08)"
+                      : "rgba(184,146,42,0.12)"
+                    : isDark
+                      ? "rgba(255,255,255,0.03)"
+                      : "rgba(255,255,255,0.55)",
+                  color: isActive ? "var(--iic-text-muted)" : "var(--iic-text)",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  opacity: isActive ? 0.55 : 1,
+                  padding: "0 13px",
+                  textDecoration: "none",
+                }}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {label}
+              </Link>
+            );
+          })}
           <Link
             href="/"
             style={{
