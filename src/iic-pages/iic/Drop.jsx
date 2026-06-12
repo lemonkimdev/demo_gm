@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -67,17 +68,15 @@ export default function Drop() {
       {step === "waiting" ? (
         <section className="space-y-5">
           <div className="overflow-hidden rounded-3xl border border-[var(--iic-gold)] bg-[radial-gradient(circle_at_50%_35%,rgba(184,146,42,0.24),transparent_34%),#050505] p-6 shadow-2xl shadow-black/60">
-            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-[rgba(184,146,42,0.45)] bg-[linear-gradient(145deg,#efefef,#bdbdbd_52%,#111)] p-6">
-              <div className="relative h-28 w-64 max-w-full rounded-[52px] bg-black shadow-2xl shadow-black/40">
-                <div className="absolute left-6 top-6 h-16 w-24 rounded-[36px] bg-gradient-to-b from-neutral-500 to-neutral-950" />
-                <div className="absolute right-6 top-6 h-16 w-24 rounded-[36px] bg-gradient-to-b from-neutral-500 to-neutral-950" />
-                <div className="absolute left-[118px] top-14 h-3 w-8 rounded-full bg-black" />
-                <div className="absolute -left-10 top-10 h-4 w-14 -rotate-12 rounded-full bg-black" />
-                <div className="absolute -right-10 top-10 h-4 w-14 rotate-12 rounded-full bg-black" />
-                <p className="absolute inset-x-0 -bottom-9 text-center text-xs font-black tracking-[0.22em] text-black">
-                  FRIDA
-                </p>
-              </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[rgba(184,146,42,0.45)] bg-white">
+              <Image
+                src="/iic-assets/frida-01.webp"
+                alt="FRIDA reference sunglasses"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 720px"
+                className="object-contain"
+              />
             </div>
             <p className="mt-4 text-xs leading-5 text-[var(--iic-text-muted)]">
               이 사진은 참조용이며, 본 화면은 데모 화면으로, 상업적인 내용에 해당하지 않습니다.

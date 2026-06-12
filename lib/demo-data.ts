@@ -36,11 +36,16 @@ const names = [
 ];
 
 const purchasedProducts = [
-  "GENTLE NODE 01",
+  "FRIDA 01",
+  "LANG 01",
+  "LO CELL 01",
+  "BOLD 01",
+  "ATOMIC 02",
+  "DEAR 01",
+  "KUBO 01",
+  "SOUTH SIDE 01",
   "MONO SHADE 02",
   "CITY FRAME 03",
-  "PUNK LENS 04",
-  "SILENT BOLD 05",
 ];
 
 export const recommendedProducts: Product[] = [
@@ -136,11 +141,13 @@ export function seededIndex(seed: string, length: number) {
   return Math.abs(hash >>> 0) % length;
 }
 
-export function getTagPersona(tagId: string) {
+export function getTagPersona(_tagId: string) {
+  void _tagId;
+
   return {
     userName: names[Math.floor(Math.random() * names.length)],
     purchasedProduct:
-      purchasedProducts[seededIndex(`${tagId}:product`, purchasedProducts.length)],
+      purchasedProducts[Math.floor(Math.random() * purchasedProducts.length)],
   };
 }
 

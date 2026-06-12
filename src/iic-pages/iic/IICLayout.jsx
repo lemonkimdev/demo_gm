@@ -120,7 +120,7 @@ export default function IICLayout({ children }) {
             gmgm
           </Link>
           <Link
-            href="/iic/points"
+            href="/iic"
             style={{
               color: "var(--iic-gold)",
               fontWeight: 800,
