@@ -70,12 +70,10 @@ export default function Checkout() {
             UCP Checkout Simulation
           </p>
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-            검색 결과에서
-            <br />
-            바로 구매 완료
+            검색후 바로구매
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-            Gemini에서 상품을 찾고, 웹사이트 이동 없이 재고 확인과 결제, NFT 발행까지 이어지는 흐름입니다.
+            Gemini에서 상품을 찾고, 웹사이트 이동 없이 재고 확인과 결제, NFT 발행까지 한번에 이어지는 흐름
           </p>
         </div>
 

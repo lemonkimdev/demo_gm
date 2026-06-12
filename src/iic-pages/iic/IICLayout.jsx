@@ -29,13 +29,13 @@ const darkIicVars = {
 };
 
 const lightIicVars = {
-  "--iic-bg": "#f3f0e8",
-  "--iic-card": "#fffaf0",
+  "--iic-bg": "#f4f4f4",
+  "--iic-card": "#ffffff",
   "--iic-gold": "#B8922A",
-  "--iic-gold-light": "#8f6c16",
-  "--iic-text": "#14110b",
-  "--iic-text-muted": "#6f6a5f",
-  "--iic-border": "#d9d1bf",
+  "--iic-gold-light": "#5f5f5f",
+  "--iic-text": "#101010",
+  "--iic-text-muted": "#666666",
+  "--iic-border": "#d8d8d8",
 };
 
 export default function IICLayout({ children }) {
@@ -43,7 +43,7 @@ export default function IICLayout({ children }) {
   const [theme, setTheme] = useState("dark");
   const isDark = theme === "dark";
   const iicVars = isDark ? darkIicVars : lightIicVars;
-  const headerBg = isDark ? "rgba(8, 8, 8, 0.96)" : "rgba(243, 240, 232, 0.96)";
+  const headerBg = isDark ? "rgba(8, 8, 8, 0.96)" : "rgba(244, 244, 244, 0.96)";
 
   return (
     <main
@@ -161,7 +161,7 @@ export default function IICLayout({ children }) {
               textDecoration: "none",
             }}
           >
-            ← Back to main
+            go to Top
           </Link>
           <div
             style={{

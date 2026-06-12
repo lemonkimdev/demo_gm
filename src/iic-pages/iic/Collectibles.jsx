@@ -170,13 +170,43 @@ export default function Collectibles() {
             NUDAKE Digital Collectibles
           </p>
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-            시즌 한정 케이크를
-            <br />
-            카드처럼 수집하세요
+            시즌별 케이크를 카드로 수집
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-            누데이크 컬렉터블을 보유하면 다음 팝업 우선 입장권과 시즌별 디지털 혜택을 받습니다.
+            누데이크 컬렉터블을 보유 시, 다음 팝업 우선 입장권과 시즌별 디지털 혜택을 겟
           </p>
+        </div>
+
+        <div className="rounded-3xl border border-[rgba(216,90,48,0.45)] bg-[var(--iic-card)] p-5">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#D85A30]">
+            Pop-up Visit SBT
+          </p>
+          <h2 className="mt-3 text-2xl font-black">누데이크 팝업 방문하셨나요?</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--iic-text-muted)]">
+            현장 방문 인증을 완료하면 다음 드롭 우선권이 담긴 SBT 배지가 발행됩니다.
+          </p>
+
+          {visitCertified ? (
+            <div
+              className="mt-5 rounded-3xl border border-[var(--iic-gold)] bg-black/45 p-5 text-center"
+              style={{ animation: "iic-sbt-pop 0.55s ease-out both" }}
+            >
+              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#D85A30] text-4xl shadow-[0_0_28px_rgba(216,90,48,0.45)]">
+                SBT
+              </div>
+              <p className="mt-4 text-sm font-black text-[var(--iic-text)]">
+                방문 인증 SBT 발행 완료. Summer &apos;26 드롭 우선권 획득
+              </p>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setVisitCertified(true)}
+              className="mt-5 min-h-12 w-full rounded-full bg-[#D85A30] px-5 py-3 text-sm font-black text-black transition hover:bg-[#ef734a] active:scale-95"
+            >
+              방문 인증하기
+            </button>
+          )}
         </div>
 
         <div className="flex gap-2 overflow-x-auto rounded-full border border-[var(--iic-border)] bg-black p-1">
@@ -253,37 +283,6 @@ export default function Collectibles() {
           })}
         </div>
 
-        <div className="rounded-3xl border border-[rgba(216,90,48,0.45)] bg-[var(--iic-card)] p-5">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#D85A30]">
-            Pop-up Visit SBT
-          </p>
-          <h2 className="mt-3 text-2xl font-black">누데이크 팝업 방문하셨나요?</h2>
-          <p className="mt-2 text-sm leading-6 text-[var(--iic-text-muted)]">
-            현장 방문 인증을 완료하면 다음 드롭 우선권이 담긴 SBT 배지가 발행됩니다.
-          </p>
-
-          {visitCertified ? (
-            <div
-              className="mt-5 rounded-3xl border border-[var(--iic-gold)] bg-black/45 p-5 text-center"
-              style={{ animation: "iic-sbt-pop 0.55s ease-out both" }}
-            >
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#D85A30] text-4xl shadow-[0_0_28px_rgba(216,90,48,0.45)]">
-                SBT
-              </div>
-              <p className="mt-4 text-sm font-black text-[var(--iic-text)]">
-                방문 인증 SBT 발행 완료. Summer &apos;26 드롭 우선권 획득
-              </p>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setVisitCertified(true)}
-              className="mt-5 min-h-12 w-full rounded-full bg-[#D85A30] px-5 py-3 text-sm font-black text-black transition hover:bg-[#ef734a] active:scale-95"
-            >
-              방문 인증하기
-            </button>
-          )}
-        </div>
       </section>
 
       {selected ? (

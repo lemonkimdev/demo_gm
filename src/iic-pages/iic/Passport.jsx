@@ -27,7 +27,7 @@ const initialCities = [
   },
   {
     id: "shenzhen",
-    name: "선전",
+    name: "뉴욕(coming soon)",
     date: "2024.12.18",
     visited: false,
     rotate: "rotate-6",
@@ -153,7 +153,10 @@ export default function Passport() {
             </div>
             <div className="text-right">
               <p className="text-sm text-[var(--iic-text-muted)]">방문 도시 수</p>
-              <p className="mt-1 text-4xl font-black">{visitedCount} / 4</p>
+              <p className="mt-1 text-3xl font-black">{visitedCount} / 30</p>
+              <p className="mt-1 text-sm font-black text-[var(--iic-text-muted)]">
+                방문 매장 수 5/84
+              </p>
             </div>
           </div>
         </div>
@@ -216,7 +219,7 @@ export default function Passport() {
                       {loading ? (
                         <span className="h-5 w-5 animate-spin rounded-full border-2 border-black/20 border-t-black" />
                       ) : (
-                        "선전 방문 시뮬레이션 (데모)"
+                        "뉴욕 방문 시뮬레이션 (데모)"
                       )}
                     </button>
                   ) : null}

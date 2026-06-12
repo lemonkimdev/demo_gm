@@ -5,15 +5,15 @@ import { useState } from "react";
 const brands = [
   {
     id: "tamburins",
-    name: "탬버린즈",
+    name: "Tamburins",
     color: "#7A5AAA",
     gradient: "linear-gradient(135deg, rgba(122,90,170,0.95), rgba(28,18,42,0.95))",
   },
   {
-    id: "nudake",
-    name: "누데이크",
-    color: "#D85A30",
-    gradient: "linear-gradient(135deg, rgba(216,90,48,0.95), rgba(44,20,14,0.95))",
+    id: "gentle-monster",
+    name: "Gentle monster",
+    color: "#E78AB7",
+    gradient: "linear-gradient(135deg, rgba(231,138,183,0.95), rgba(58,31,48,0.95))",
   },
 ];
 
@@ -25,7 +25,7 @@ export default function Gift() {
   const [sendStep, setSendStep] = useState(1);
   const [selectedBrandId, setSelectedBrandId] = useState("tamburins");
   const [amount, setAmount] = useState(15);
-  const [message, setMessage] = useState("생일 축하해! 탬버린즈에서 좋아하는 향 골라봐 🎁");
+  const [message, setMessage] = useState("생일 축하해! Tamburins에서 좋아하는 향 골라봐 🎁");
   const [channel, setChannel] = useState("카카오톡");
   const [flipped, setFlipped] = useState(false);
   const [giftCode, setGiftCode] = useState("");
@@ -82,12 +82,10 @@ export default function Gift() {
             Cross-Border Gift Token
           </p>
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-            향을 고르는 마음을
-            <br />
-            링크로 보내세요
+            마음을 링크로 글로벌하게
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-            태국·베트남 친구에게 $15 기프트 토큰을 만들고, 메신저 링크로 바로 전달합니다.
+            해외 사는 친구, 글로벌 협업하는 파트너사 멤버에게 $15 기프트 토큰을 만들고, 메신저 링크로 바로 전달
           </p>
         </div>
 
@@ -185,12 +183,21 @@ export default function Gift() {
                     value={message}
                     maxLength={100}
                     onChange={(event) => setMessage(event.target.value)}
-                    placeholder="생일 축하해! 탬버린즈에서 좋아하는 향 골라봐 🎁"
+                    placeholder="생일 축하해! Tamburins에서 좋아하는 향 골라봐 🎁"
                     className="mt-3 min-h-28 w-full resize-none rounded-3xl border border-[var(--iic-border)] bg-black px-4 py-4 text-sm leading-6 text-[var(--iic-text)] outline-none transition placeholder:text-[var(--iic-text-muted)] focus:border-[var(--iic-gold)]"
                   />
                   <p className="mt-2 text-right text-xs text-[var(--iic-text-muted)]">
                     {message.length}/100
                   </p>
+                  <div className="mt-3 rounded-3xl border border-[var(--iic-border)] bg-black/45 p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-black text-[var(--iic-text)]">자동번역</p>
+                      <p className="text-xs text-[var(--iic-text-muted)]">Chrome auto translate</p>
+                    </div>
+                    <p className="mt-3 rounded-2xl border border-[var(--iic-border)] bg-black px-4 py-3 text-sm leading-6 text-[var(--iic-text-muted)]">
+                      Happy birthday! Pick your favorite scent at Tamburins 🎁
+                    </p>
+                  </div>
                 </div>
 
                 <div>
@@ -394,12 +401,12 @@ export default function Gift() {
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/70">
                   Received Gift
                 </p>
-                <h2 className="mt-3 text-3xl font-black text-white">탬버린즈 기프트</h2>
+                <h2 className="mt-3 text-3xl font-black text-white">Tamburins 기프트</h2>
                 <div className="mt-5 grid gap-2 text-sm text-white">
                   {[
                     ["보낸 사람", "ANN Friend"],
                     ["금액", redeemed ? "$0" : "$15 USDC"],
-                    ["브랜드", "탬버린즈"],
+                    ["브랜드", "Tamburins"],
                     ["유효기간", "30일"],
                   ].map(([label, value]) => (
                     <div key={label} className="flex items-center justify-between rounded-2xl bg-black/25 p-3">
@@ -418,7 +425,7 @@ export default function Gift() {
                     onClick={() => setRedeemed(true)}
                     className="mt-5 min-h-12 w-full rounded-full bg-white px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-text)] active:scale-95"
                   >
-                    탬버린즈에서 사용하기
+                    Tamburins에서 사용하기
                   </button>
                 )}
               </div>

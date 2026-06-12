@@ -161,12 +161,10 @@ export default function Subscription() {
             Scent Subscription
           </p>
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-            내 취향에 맞는 향을
-            <br />
-            매달 받아보세요
+            내 취향을 매달 받아보기
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-            짧은 향 취향 퀴즈를 기반으로 매달 딱 맞는 탬버린즈 향수와 시즌 SBT를 추천합니다.
+            간단한 취향 퀴즈를 통해 매달 나에게 맞는 탬버린즈 향수와 시즌별 SBT를 추천받고 구독까지
           </p>
         </div>
 

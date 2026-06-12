@@ -7,6 +7,7 @@ const tabs = [
   { id: "program", label: "향 프로그램" },
   { id: "recipes", label: "레시피" },
   { id: "billing", label: "결제" },
+  { id: "strategy", label: "AI전략" },
 ];
 
 const metrics = [
@@ -136,7 +137,7 @@ export default function B2BDashboard() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-6xl pb-24 text-[var(--iic-text)] md:pb-0">
+    <div className="mx-auto w-full max-w-6xl text-[var(--iic-text)]">
       <style jsx>{`
         @keyframes iic-fade-in {
           from {
@@ -155,6 +156,31 @@ export default function B2BDashboard() {
       `}</style>
 
       <div className="grid gap-5 md:grid-cols-[220px_1fr]">
+        <section className="rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4 md:hidden">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
+            Park Hyatt Tokyo
+          </p>
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+            <h1 className="text-2xl font-black leading-tight">Scent Ops Dashboard</h1>
+          </div>
+          <nav className="mt-4 flex flex-wrap gap-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                className={`min-h-10 rounded-full border px-4 text-sm font-black transition active:scale-95 ${
+                  activeTab === tab.id
+                    ? "border-[#7A5AAA] bg-[#7A5AAA] text-white"
+                    : "border-[var(--iic-border)] text-[var(--iic-text-muted)]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </nav>
+        </section>
+
         <aside className="hidden rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4 md:block">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
             Park Hyatt Tokyo
@@ -188,9 +214,7 @@ export default function B2BDashboard() {
               B2B Fragrance Concierge
             </p>
             <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-              도쿄 호텔 향 구독을
-              <br />
-              AI로 운영합니다
+              도쿄 호텔(파트너사) 향 구독을 AI 운영
             </h2>
             <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
               로비, 스파, 피트니스, 레스토랑의 향 프로그램과 온체인 레시피, USDC 결제를 한 곳에서 관리합니다.
@@ -414,27 +438,30 @@ export default function B2BDashboard() {
               </div>
             </section>
           ) : null}
+
+          {activeTab === "strategy" ? (
+            <section className="iic-fade space-y-5">
+              <div className="rounded-3xl border border-[var(--iic-gold)] bg-[rgba(184,146,42,0.08)] p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
+                  Gemini Strategy Memo
+                </p>
+                <h3 className="mt-3 text-3xl font-black">AI전략</h3>
+                <div className="mt-5 space-y-3 text-sm leading-6 text-[var(--iic-text-muted)]">
+                  <p className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4">
+                    현재 대시보드 기준으로 로비는 겨울 시즌 체류 시간이 길어지는 구간입니다. SYLPH보다 SOLACE의 안정적인 우디 잔향을 적용하면 만족도 상승 가능성이 큽니다.
+                  </p>
+                  <p className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4">
+                    스파룸은 MUSK 유지가 적합하며, 피트니스는 강도를 4에서 3으로 낮춰 재방문 고객 피로도를 줄이는 주문 변경을 권장합니다.
+                  </p>
+                  <p className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4">
+                    다음 주문은 SOLACE 2L를 로비용으로 증량하고, SYLPH는 레스토랑 소용량 테스트로 전환하는 구성이 효율적입니다.
+                  </p>
+                </div>
+              </div>
+            </section>
+          ) : null}
         </main>
       </div>
-
-      <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-[var(--iic-border)] bg-[#080808]/95 p-2 backdrop-blur md:hidden">
-        <div className="mx-auto grid max-w-3xl grid-cols-4 gap-1">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => setActiveTab(tab.id)}
-              className={`min-h-12 rounded-2xl px-2 text-xs font-black transition active:scale-95 ${
-                activeTab === tab.id
-                  ? "bg-[#7A5AAA] text-white"
-                  : "text-[var(--iic-text-muted)]"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-      </nav>
 
       {modal ? (
         <div className="fixed inset-0 z-50 flex items-end bg-black/70 p-4 sm:items-center sm:justify-center">

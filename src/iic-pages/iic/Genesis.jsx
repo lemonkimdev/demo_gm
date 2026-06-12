@@ -65,13 +65,23 @@ export default function Genesis() {
 
             <div className="py-8 text-center">
               <div
-                className="mx-auto flex h-36 w-36 items-center justify-center rounded-[36px] border border-[rgba(184,146,42,0.45)] bg-[radial-gradient(circle,rgba(184,146,42,0.22),rgba(0,0,0,0.2))] text-7xl"
+                className="mx-auto flex h-40 w-64 max-w-full items-center justify-center rounded-[36px] border border-[rgba(184,146,42,0.45)] bg-[linear-gradient(145deg,#efefef,#a8a8a8_52%,#111)] p-5"
                 style={{ animation: "iic-gold-breathe 3s ease-in-out infinite" }}
               >
-                🥽
+                <div className="relative h-20 w-52 rounded-[44px] bg-black shadow-2xl shadow-black/50">
+                  <div className="absolute left-5 top-5 h-10 w-20 rounded-[28px] bg-gradient-to-b from-neutral-500 to-neutral-950" />
+                  <div className="absolute right-5 top-5 h-10 w-20 rounded-[28px] bg-gradient-to-b from-neutral-500 to-neutral-950" />
+                  <div className="absolute left-[96px] top-9 h-2 w-8 rounded-full bg-black" />
+                  <div className="absolute inset-x-0 -bottom-7 text-center text-[10px] font-black tracking-[0.18em] text-black">
+                    AI GLASSES
+                  </div>
+                </div>
               </div>
+              <p className="mx-auto mt-4 max-w-xs text-xs leading-5 text-[var(--iic-text-muted)]">
+                이 사진은 참조용이며, 본 화면은 데모 화면으로, 상업적인 내용에 해당하지 않습니다.
+              </p>
               <h1 className="mt-8 text-4xl font-black leading-tight tracking-tight">
-                GENTLE MONSTER XR
+                GENTLE MONSTER AI Glasses
               </h1>
               <p className="mt-3 text-2xl font-black text-[var(--iic-gold-light)]">
                 Genesis #0042 / 5000

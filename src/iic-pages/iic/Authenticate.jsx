@@ -26,7 +26,7 @@ const timeline = [
 ];
 
 export default function Authenticate() {
-  const [method, setMethod] = useState("serial");
+  const [method, setMethod] = useState("qr");
   const [serial, setSerial] = useState("");
   const [step, setStep] = useState("start");
   const [scanning, setScanning] = useState(false);
@@ -85,12 +85,10 @@ export default function Authenticate() {
             Product Authentication
           </p>
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-            내 젠틀몬스터,
-            <br />
-            진품인가요?
+            내 제품, 진품?
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-            QR 스캔 또는 시리얼 넘버 입력으로 제품 등록 기록과 소유 이력을 즉시 확인합니다.
+            QR 스캔 또는 시리얼 넘버 입력으로 제품 등록 기록과 소유 이력을 즉시 확인
           </p>
         </div>
 
