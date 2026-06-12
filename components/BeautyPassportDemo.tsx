@@ -25,7 +25,7 @@ const modalMessages = {
     message: "결제수단 확인 후 주문화면으로 넘어갑니다.",
   },
   subscription: {
-    title: "커스텀 섭스크립션",
+    title: "커스텀 구독",
     message:
       "AI가 소진 주기를 예측하여 핸드크림은 30일, 향수는 60일 주기로 추천 배송합니다.",
   },
@@ -140,8 +140,7 @@ export default function BeautyPassportDemo() {
               <h2 className="mt-2 text-2xl font-semibold">AI 화장대 분석</h2>
               <p className={`mt-3 text-sm leading-6 ${mutedTextClass}`}>
                 화장대 사진을 촬영하면 보유 제품, 브랜드 조합, 소비 성향,
-                취향을 분석합니다. # 스마트폰 사용 시, 카메라 촬영. 글래스
-                사용 시, 글래스 촬영
+                취향을 분석합니다. # 스마트폰 - 카메라 촬영. 글래스 - 글래스 촬영
               </p>
               {/*
                 Future extension:
@@ -235,7 +234,7 @@ export default function BeautyPassportDemo() {
                     Next Order
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold">
-                    AI가 구성한 다음 주문
+                    AI가 제안하는 다음 주문
                   </h2>
                   <p className="mt-4 text-sm leading-6 text-neutral-700">
                     {beautyRecommendationText}
@@ -284,7 +283,7 @@ export default function BeautyPassportDemo() {
                       onClick={() => setModal(modalMessages.subscription)}
                       className="h-11 shrink-0 rounded-full border border-neutral-300 px-4 text-sm font-semibold"
                     >
-                      커스텀 섭스크립션
+                      커스텀 구독
                     </button>
                     <button
                       type="button"
@@ -317,12 +316,12 @@ export default function BeautyPassportDemo() {
                       onClick={() => setModal(modalMessages.love)}
                       className="h-11 shrink-0 rounded-full bg-neutral-950 px-5 text-sm font-semibold text-white"
                     >
-                      Pick!
+                      Vote & Pick!
                     </button>
-                    <p className="text-sm font-semibold leading-5">
+                    <p className="min-w-0 text-sm font-semibold leading-5">
                       Celeb&apos;s Recipe + NFT
                       <span className="block text-xs font-medium text-neutral-600">
-                        (포인트 상당의 토큰이 포함됩니다.)
+                        출품 중인 셀럽의 향기 레시피로 제작된 제품을 투표 또는 구매 시, 다음 투표를 위한 토큰이 주어집니다. (구매 시에는 포인트 상당의 토큰으로 변경 수령 가능)
                       </span>
                     </p>
                   </div>

@@ -7,14 +7,14 @@ import { useState } from "react";
 const iicLinks = [
   ["/iic", "Home"],
   ["/iic/drop", "Drop"],
-  ["/iic/checkout", "Checkout"],
-  ["/iic/points", "Points"],
-  ["/iic/authenticate", "Authenticate"],
+  ["/iic/checkout", "C.O"],
+  ["/iic/points", "Po&To"],
+  ["/iic/authenticate", "Auth"],
   ["/iic/gift", "Gift"],
-  ["/iic/passport", "Passport"],
-  ["/iic/subscription", "Subscription"],
-  ["/iic/collectibles", "Collectibles"],
-  ["/iic/genesis", "Genesis"],
+  ["/iic/passport", "Pass"],
+  ["/iic/subscription", "Subsc"],
+  ["/iic/collectibles", "Collec"],
+  ["/iic/genesis", "Gen"],
   ["/iic/b2b", "B2B"],
 ];
 

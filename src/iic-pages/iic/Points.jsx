@@ -164,10 +164,10 @@ export default function Points() {
                 You just earned
               </p>
               <p className="iic-keep-gold mt-1 text-5xl font-black tracking-tight text-[var(--iic-gold-light)]">
-                +{countedPoints} IIC
+                {(countedPoints / 100).toFixed(2)} IIC
               </p>
               <p className="iic-on-dark mt-1 text-sm text-[var(--iic-text-muted)]">
-                Points earned
+                {countedPoints} Points (pts) earned
               </p>
             </div>
             <div className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-5 sm:min-w-64">

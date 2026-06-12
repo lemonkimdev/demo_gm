@@ -141,7 +141,7 @@ export default function Page() {
 
           <FlowRow title="내 자산">
             <Link href="/iic/points" style={linkStyle}>
-              Points
+              Points&Tokens
             </Link>
             <Link href="/iic/authenticate" style={linkStyle}>
               Authenticate

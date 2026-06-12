@@ -107,8 +107,10 @@ export default function Genesis() {
               key={title}
               className="rounded-3xl border border-[var(--iic-gold)] bg-[var(--iic-card)] p-4 shadow-lg shadow-black/30"
             >
-              <p className="text-3xl">{icon}</p>
-              <h2 className="mt-4 text-lg font-black leading-tight">{title}</h2>
+              <div className="flex items-center gap-2">
+                <p className="text-lg leading-none">{icon}</p>
+                <h2 className="text-lg font-black leading-tight">{title}</h2>
+              </div>
               <p className="mt-2 text-xs leading-5 text-[var(--iic-text-muted)]">
                 {description}
               </p>

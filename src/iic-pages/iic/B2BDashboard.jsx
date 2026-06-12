@@ -230,7 +230,24 @@ export default function B2BDashboard() {
                     className="rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4"
                   >
                     <p className="text-xs text-[var(--iic-text-muted)]">{label}</p>
-                    <p className="mt-2 text-2xl font-black">{value}</p>
+                    {label === "이번 달 결제" ? (
+                      <div className="mt-2">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-2xl font-black">{value}</p>
+                          <button
+                            type="button"
+                            className="min-h-9 rounded-full border border-[#7A5AAA] px-3 text-xs font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
+                          >
+                            IIC 스왑
+                          </button>
+                        </div>
+                        <p className="mt-1 text-[11px] text-[var(--iic-text-muted)]">
+                          (스왑 시 수수료가 소요됩니다.)
+                        </p>
+                      </div>
+                    ) : (
+                      <p className="mt-2 text-2xl font-black">{value}</p>
+                    )}
                   </div>
                 ))}
               </div>
