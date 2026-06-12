@@ -70,7 +70,7 @@ export default function Checkout() {
             UCP Checkout Simulation
           </p>
           <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-            검색후 바로구매
+            검색 후 바로 구매
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
             Gemini에서 상품을 찾고, 웹사이트 이동 없이 재고 확인과 결제, NFT 발행까지 한번에 이어지는 흐름
@@ -104,8 +104,8 @@ export default function Checkout() {
               </span>
             </div>
 
-            <div className="mt-5 rounded-3xl border border-[var(--iic-border)] bg-black p-5">
-              <p className="text-sm text-[var(--iic-text-muted)]">가격</p>
+            <div className="iic-on-dark mt-5 rounded-3xl border border-[var(--iic-border)] bg-black p-5">
+              <p className="iic-on-dark-muted text-sm text-[var(--iic-text-muted)]">가격</p>
               <p className="mt-1 text-4xl font-black">$300 USDC</p>
             </div>
 
@@ -209,7 +209,7 @@ export default function Checkout() {
           </div>
         )}
 
-        <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+        <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
             Checkout Comparison
           </p>

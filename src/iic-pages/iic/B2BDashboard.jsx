@@ -172,7 +172,7 @@ export default function B2BDashboard() {
                 className={`min-h-10 rounded-full border px-4 text-sm font-black transition active:scale-95 ${
                   activeTab === tab.id
                     ? "border-[#7A5AAA] bg-[#7A5AAA] text-white"
-                    : "border-[var(--iic-border)] text-[var(--iic-text-muted)]"
+                    : "iic-light-hover-readable border-[var(--iic-border)] text-[var(--iic-text-muted)] hover:bg-neutral-800 hover:text-white"
                 }`}
               >
                 {tab.label}
@@ -199,7 +199,7 @@ export default function B2BDashboard() {
                 className={`min-h-11 rounded-2xl px-4 text-left text-sm font-black transition active:scale-95 ${
                   activeTab === tab.id
                     ? "bg-[#7A5AAA] text-white"
-                    : "text-[var(--iic-text-muted)] hover:bg-black hover:text-[var(--iic-text)]"
+                    : "iic-light-hover-readable text-[var(--iic-text-muted)] hover:bg-neutral-800 hover:text-white"
                 }`}
               >
                 {tab.label}
@@ -265,7 +265,7 @@ export default function B2BDashboard() {
                 )}
               </div>
 
-              <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+              <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
                 <h3 className="text-xl font-black">최근 활동</h3>
                 <div className="mt-4 grid gap-3">
                   {activities.map((activity) => (
@@ -283,7 +283,7 @@ export default function B2BDashboard() {
 
           {activeTab === "program" ? (
             <section className="iic-fade space-y-5">
-              <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+              <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#7A5AAA]">
@@ -408,7 +408,7 @@ export default function B2BDashboard() {
                 </button>
               </div>
 
-              <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+              <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
                 <h3 className="text-xl font-black">결제 이력</h3>
                 <div className="mt-4 hidden overflow-hidden rounded-2xl border border-[var(--iic-border)] md:block">
                   <table className="w-full text-left text-sm">

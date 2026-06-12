@@ -217,8 +217,8 @@ export default function Collectibles() {
               onClick={() => setActiveFilter(filter)}
               className={`min-h-11 shrink-0 rounded-full px-4 text-sm font-black transition active:scale-95 ${
                 activeFilter === filter
-                  ? "bg-[#D85A30] text-black"
-                  : "text-[var(--iic-text-muted)] hover:text-[var(--iic-text)]"
+                  ? "iic-active-filter bg-[#D85A30] text-black"
+                  : "iic-light-filter-button text-[var(--iic-text-muted)] hover:bg-neutral-800 hover:text-white"
               }`}
             >
               {filter}
@@ -272,7 +272,7 @@ export default function Collectibles() {
                     className={`mt-3 inline-flex min-h-9 items-center rounded-full px-3 text-xs font-black ${
                       owned
                         ? "bg-[var(--iic-gold)] text-black"
-                        : "bg-black/45 text-[var(--iic-text)]"
+                        : "iic-on-dark-muted bg-black/45 text-[var(--iic-text)]"
                     }`}
                   >
                     {item.action}

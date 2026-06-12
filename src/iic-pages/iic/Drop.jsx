@@ -108,12 +108,12 @@ export default function Drop() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="rounded-2xl border border-[var(--iic-border)] bg-black p-3 text-center"
+                    className="iic-on-dark rounded-2xl border border-[var(--iic-border)] bg-black p-3 text-center"
                   >
                     <p className="text-3xl font-black tabular-nums">
                       {String(value).padStart(2, "0")}
                     </p>
-                    <p className="mt-1 text-xs text-[var(--iic-text-muted)]">
+                    <p className="iic-on-dark-muted mt-1 text-xs text-[var(--iic-text-muted)]">
                       {label}
                     </p>
                   </div>
@@ -126,13 +126,13 @@ export default function Drop() {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="email@example.com"
-                className="min-h-11 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition focus:border-[var(--iic-gold)]"
+                className="iic-on-dark min-h-11 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-neutral-400 focus:border-[var(--iic-gold)]"
               />
               <input
                 value={wallet}
                 onChange={(event) => setWallet(event.target.value)}
                 placeholder="Wallet address"
-                className="min-h-11 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition focus:border-[var(--iic-gold)]"
+                className="iic-on-dark min-h-11 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-neutral-400 focus:border-[var(--iic-gold)]"
               />
               <button className="min-h-11 w-full rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition active:scale-95 hover:bg-[var(--iic-gold-light)]">
                 알림 받기

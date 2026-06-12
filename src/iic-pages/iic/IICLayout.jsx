@@ -47,6 +47,8 @@ export default function IICLayout({ children }) {
 
   return (
     <main
+      className="iic-app"
+      data-iic-theme={theme}
       style={{
         ...iicVars,
         minHeight: "100vh",
@@ -54,6 +56,37 @@ export default function IICLayout({ children }) {
         color: "var(--iic-text)",
       }}
     >
+      <style jsx global>{`
+        .iic-app[data-iic-theme="light"] .iic-on-dark {
+          color: #f7f7f7 !important;
+        }
+
+        .iic-app[data-iic-theme="light"] .iic-on-dark-muted {
+          color: #d6d6d6 !important;
+        }
+
+        .iic-app[data-iic-theme="light"] .iic-keep-gold {
+          color: #d4ac52 !important;
+        }
+
+        .iic-app[data-iic-theme="light"] .iic-light-soft-panel {
+          background: rgba(255, 255, 255, 0.78) !important;
+        }
+
+        .iic-app[data-iic-theme="light"] .iic-light-hover-readable:hover {
+          background: #e8e8e8 !important;
+          color: #111111 !important;
+        }
+
+        .iic-app[data-iic-theme="light"] .iic-light-filter-button:not(.iic-active-filter) {
+          color: #d8d8d8 !important;
+        }
+
+        .iic-app[data-iic-theme="light"] .iic-light-filter-button:not(.iic-active-filter):hover {
+          background: #5a5a5a !important;
+          color: #ffffff !important;
+        }
+      `}</style>
       <header
         style={{
           position: "sticky",

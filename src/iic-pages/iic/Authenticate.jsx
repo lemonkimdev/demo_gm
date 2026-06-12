@@ -105,7 +105,7 @@ export default function Authenticate() {
                   className={`min-h-11 rounded-full px-3 text-sm font-black transition active:scale-95 ${
                     method === value
                       ? "bg-[var(--iic-gold)] text-black"
-                      : "text-[var(--iic-text-muted)] hover:text-[var(--iic-text)]"
+                      : "iic-on-dark-muted text-[var(--iic-text-muted)] hover:bg-neutral-800 hover:text-white"
                   }`}
                 >
                   {label}
@@ -141,7 +141,7 @@ export default function Authenticate() {
                   value={serial}
                   onChange={(event) => setSerial(event.target.value)}
                   placeholder="예) GM-2023-FR-0042"
-                  className="min-h-12 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-[var(--iic-text-muted)] focus:border-[var(--iic-gold)]"
+                  className="iic-on-dark min-h-12 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-neutral-400 focus:border-[var(--iic-gold)]"
                 />
                 <button className="min-h-12 w-full rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95">
                   인증하기
@@ -179,10 +179,10 @@ export default function Authenticate() {
                     ].map(([label, value]) => (
                       <div
                         key={label}
-                        className="flex items-center justify-between gap-4 rounded-2xl border border-[var(--iic-border)] bg-black p-3"
+                        className="iic-on-dark flex items-center justify-between gap-4 rounded-2xl border border-[var(--iic-border)] bg-black p-3"
                       >
-                        <span className="text-[var(--iic-text-muted)]">{label}</span>
-                        <span className="text-right font-bold text-[var(--iic-text)]">
+                        <span className="iic-on-dark-muted text-[var(--iic-text-muted)]">{label}</span>
+                        <span className="iic-on-dark text-right font-bold text-[var(--iic-text)]">
                           {value}
                         </span>
                       </div>
@@ -245,7 +245,7 @@ export default function Authenticate() {
                   </div>
                 </div>
 
-                <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+                <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
                     Resale Guide
                   </p>

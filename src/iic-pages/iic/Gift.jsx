@@ -100,7 +100,7 @@ export default function Gift() {
               className={`min-h-11 rounded-full px-3 text-sm font-black transition active:scale-95 ${
                 activeTab === value
                   ? "bg-[var(--iic-gold)] text-black"
-                  : "text-[var(--iic-text-muted)] hover:text-[var(--iic-text)]"
+                  : "iic-on-dark-muted text-[var(--iic-text-muted)] hover:bg-neutral-800 hover:text-white"
               }`}
             >
               {label}
@@ -113,7 +113,7 @@ export default function Gift() {
             {sendStep === 1 ? (
               <form
                 onSubmit={createGift}
-                className="space-y-5 rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5"
+                className="iic-light-soft-panel space-y-5 rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5"
               >
                 <div>
                   <p className="text-sm font-black text-[var(--iic-text)]">브랜드 선택</p>
@@ -165,7 +165,7 @@ export default function Gift() {
                         className={`min-h-11 rounded-2xl border px-3 py-3 text-sm font-black transition active:scale-95 ${
                           amount === value
                             ? "border-[var(--iic-gold)] bg-[var(--iic-gold)] text-black"
-                            : "border-[var(--iic-border)] bg-black text-[var(--iic-text)]"
+                            : "iic-on-dark border-[var(--iic-border)] bg-black text-[var(--iic-text)]"
                         }`}
                       >
                         ${value}
@@ -184,7 +184,7 @@ export default function Gift() {
                     maxLength={100}
                     onChange={(event) => setMessage(event.target.value)}
                     placeholder="생일 축하해! Tamburins에서 좋아하는 향 골라봐 🎁"
-                    className="mt-3 min-h-28 w-full resize-none rounded-3xl border border-[var(--iic-border)] bg-black px-4 py-4 text-sm leading-6 text-[var(--iic-text)] outline-none transition placeholder:text-[var(--iic-text-muted)] focus:border-[var(--iic-gold)]"
+                    className="iic-on-dark mt-3 min-h-28 w-full resize-none rounded-3xl border border-[var(--iic-border)] bg-black px-4 py-4 text-sm leading-6 text-[var(--iic-text)] outline-none transition placeholder:text-neutral-400 focus:border-[var(--iic-gold)]"
                   />
                   <p className="mt-2 text-right text-xs text-[var(--iic-text-muted)]">
                     {message.length}/100
@@ -194,7 +194,7 @@ export default function Gift() {
                       <p className="text-sm font-black text-[var(--iic-text)]">자동번역</p>
                       <p className="text-xs text-[var(--iic-text-muted)]">Chrome auto translate</p>
                     </div>
-                    <p className="mt-3 rounded-2xl border border-[var(--iic-border)] bg-black px-4 py-3 text-sm leading-6 text-[var(--iic-text-muted)]">
+                    <p className="iic-on-dark-muted mt-3 rounded-2xl border border-[var(--iic-border)] bg-black px-4 py-3 text-sm leading-6 text-[var(--iic-text-muted)]">
                       Happy birthday! Pick your favorite scent at Tamburins 🎁
                     </p>
                   </div>
@@ -210,8 +210,8 @@ export default function Gift() {
                         onClick={() => setChannel(value)}
                         className={`min-h-11 rounded-2xl border px-2 py-3 text-xs font-black transition active:scale-95 ${
                           channel === value
-                            ? "border-[var(--iic-gold)] bg-[rgba(184,146,42,0.14)] text-[var(--iic-gold-light)]"
-                            : "border-[var(--iic-border)] bg-black text-[var(--iic-text-muted)]"
+                            ? "border-[var(--iic-gold)] bg-[var(--iic-gold)] text-black"
+                            : "iic-on-dark border-[var(--iic-border)] bg-black text-[var(--iic-text-muted)]"
                         }`}
                       >
                         {value}
@@ -379,7 +379,7 @@ export default function Gift() {
         ) : null}
 
         {activeTab === "receive" ? (
-          <div className="space-y-5 rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+          <div className="iic-light-soft-panel space-y-5 rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
             <form onSubmit={revealGift} className="space-y-3">
               <label htmlFor="gift-code" className="text-sm font-black text-[var(--iic-text)]">
                 받은 코드를 입력하세요
@@ -389,7 +389,7 @@ export default function Gift() {
                 value={giftCode}
                 onChange={(event) => setGiftCode(event.target.value)}
                 placeholder="예) TB-15-FRIEND"
-                className="min-h-12 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-[var(--iic-text-muted)] focus:border-[var(--iic-gold)]"
+                className="iic-on-dark min-h-12 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-neutral-400 focus:border-[var(--iic-gold)]"
               />
               <button className="min-h-12 w-full rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95">
                 선물 확인하기

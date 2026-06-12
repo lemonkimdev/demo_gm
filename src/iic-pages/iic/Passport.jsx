@@ -182,7 +182,7 @@ export default function Passport() {
                   className={`rounded-3xl border p-4 ${
                     city.visited
                       ? "border-[var(--iic-border)] bg-[var(--iic-card)]"
-                      : "border-dashed border-[var(--iic-border)] bg-black/45"
+                      : "iic-on-dark border-dashed border-[var(--iic-border)] bg-black/45"
                   }`}
                 >
                   <div className="flex min-h-40 flex-col items-center justify-center text-center">
@@ -194,7 +194,7 @@ export default function Passport() {
                         VISITED
                       </div>
                     ) : (
-                      <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-[var(--iic-text-muted)] text-xs font-black text-[var(--iic-text-muted)]">
+                      <div className="iic-on-dark flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-white text-xs font-black text-white">
                         미방문
                       </div>
                     )}
@@ -205,7 +205,7 @@ export default function Passport() {
                         <p>✓ SBT 발행됨</p>
                       </div>
                     ) : (
-                      <p className="mt-2 text-xs text-[var(--iic-text-muted)]">미방문</p>
+                      <p className="iic-on-dark mt-2 text-xs text-[var(--iic-text-muted)]">미방문</p>
                     )}
                   </div>
 
@@ -278,7 +278,7 @@ export default function Passport() {
           </div>
         ) : null}
 
-        <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+        <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
             SBT Info
           </p>

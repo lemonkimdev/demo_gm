@@ -155,18 +155,18 @@ export default function Points() {
 
       <section className="rounded-3xl border border-[var(--iic-border)] bg-[linear-gradient(135deg,#3a2c0b,#111_48%,#080808)] p-5 shadow-2xl shadow-black/50">
         <div className="rounded-2xl border border-[rgba(184,146,42,0.35)] bg-black/35 p-5">
-          <p className="text-sm font-semibold text-[var(--iic-gold-light)]">
-            🕶️ FRIDA × Felix Edition purchased
+          <p className="iic-keep-gold text-sm font-semibold text-[var(--iic-gold-light)]">
+            FRIDA × Felix Edition purchased
           </p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-[var(--iic-text-muted)]">
+              <p className="iic-on-dark text-xs uppercase tracking-[0.18em] text-[var(--iic-text-muted)]">
                 You just earned
               </p>
-              <p className="mt-1 text-5xl font-black tracking-tight text-[var(--iic-gold-light)]">
+              <p className="iic-keep-gold mt-1 text-5xl font-black tracking-tight text-[var(--iic-gold-light)]">
                 +{countedPoints} IIC
               </p>
-              <p className="mt-1 text-sm text-[var(--iic-text-muted)]">
+              <p className="iic-on-dark mt-1 text-sm text-[var(--iic-text-muted)]">
                 Points earned
               </p>
             </div>

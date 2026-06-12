@@ -77,21 +77,21 @@ export default function Genesis() {
                   </div>
                 </div>
               </div>
-              <p className="mx-auto mt-4 max-w-xs text-xs leading-5 text-[var(--iic-text-muted)]">
+              <p className="iic-on-dark-muted mx-auto mt-4 max-w-xs text-xs leading-5 text-[var(--iic-text-muted)]">
                 이 사진은 참조용이며, 본 화면은 데모 화면으로, 상업적인 내용에 해당하지 않습니다.
               </p>
-              <h1 className="mt-8 text-4xl font-black leading-tight tracking-tight">
+              <h1 className="iic-on-dark mt-8 text-4xl font-black leading-tight tracking-tight">
                 GENTLE MONSTER AI Glasses
               </h1>
-              <p className="mt-3 text-2xl font-black text-[var(--iic-gold-light)]">
+              <p className="iic-keep-gold mt-3 text-2xl font-black text-[var(--iic-gold-light)]">
                 Genesis #0042 / 5000
               </p>
             </div>
 
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs text-[var(--iic-text-muted)]">Wallet</p>
-                <p className="mt-1 text-sm font-black">0x1a2b...9f8e</p>
+                <p className="iic-keep-gold text-xs text-[var(--iic-gold-light)]">Wallet</p>
+                <p className="iic-on-dark mt-1 text-sm font-black">0x1a2b...9f8e</p>
               </div>
               <p className="text-right text-xs font-bold text-[var(--iic-text-muted)]">
                 다시는 발행되지 않습니다
@@ -115,7 +115,7 @@ export default function Genesis() {
           ))}
         </div>
 
-        <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+        <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
@@ -153,10 +153,10 @@ export default function Genesis() {
             {details.map(([label, value]) => (
               <div
                 key={label}
-                className="flex items-center justify-between gap-4 rounded-2xl border border-[var(--iic-border)] bg-black p-3"
+                className="iic-on-dark-muted flex items-center justify-between gap-4 rounded-2xl border border-[var(--iic-border)] bg-black p-3"
               >
-                <span className="text-[var(--iic-text-muted)]">{label}</span>
-                <span className="text-right font-black">{value}</span>
+                <span className="iic-on-dark-muted text-[var(--iic-text-muted)]">{label}</span>
+                <span className="iic-on-dark-muted text-right font-black">{value}</span>
               </div>
             ))}
             <div className="rounded-2xl border border-[var(--iic-gold)] bg-[rgba(184,146,42,0.12)] p-4">
@@ -166,7 +166,7 @@ export default function Genesis() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
+        <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
             Resale Status
           </p>

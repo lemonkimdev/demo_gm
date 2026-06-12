@@ -241,18 +241,18 @@ export default function Subscription() {
               <h2 className="mt-3 text-3xl font-black">
                 당신의 향 프로파일: {profile}
               </h2>
-              <div className="mt-5 rounded-3xl border border-[var(--iic-border)] bg-black/45 p-5">
+              <div className="iic-on-dark mt-5 rounded-3xl border border-[var(--iic-border)] bg-black/45 p-5">
                 <p className="text-sm text-[var(--iic-text-muted)]">추천 제품</p>
                 <p className="mt-2 text-4xl font-black">SYLPH 30ml</p>
               </div>
               <div className="mt-5 grid gap-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-                <p className="rounded-2xl border border-[var(--iic-border)] bg-black/35 p-3">
+                <p className="iic-on-dark-muted rounded-2xl border border-[var(--iic-border)] bg-black/35 p-3">
                   선택한 향 계열이 부드럽고 깨끗한 잔향과 잘 맞습니다.
                 </p>
-                <p className="rounded-2xl border border-[var(--iic-border)] bg-black/35 p-3">
+                <p className="iic-on-dark-muted rounded-2xl border border-[var(--iic-border)] bg-black/35 p-3">
                   일상 사용 빈도를 고려해 부담스럽지 않은 30ml 구성을 추천합니다.
                 </p>
-                <p className="rounded-2xl border border-[var(--iic-border)] bg-black/35 p-3">
+                <p className="iic-on-dark-muted rounded-2xl border border-[var(--iic-border)] bg-black/35 p-3">
                   매월 배송 시 계절별 SBT 에어드롭을 함께 받을 수 있습니다.
                 </p>
               </div>
