@@ -311,7 +311,7 @@ export default function Passport() {
           href="/iic/points"
           className="flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95"
         >
-          방문으로 쌓인 IIC 포인트 확인 →
+          방문으로 쌓인 IIC 토큰 & 포인트 확인 →
         </Link>
       </section>
     </div>

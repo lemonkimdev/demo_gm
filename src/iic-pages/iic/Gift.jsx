@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const brands = [
   {
@@ -20,6 +20,32 @@ const brands = [
 const amounts = [5, 10, 15, 20];
 const channels = ["카카오톡", "LINE", "WhatsApp"];
 
+function translateGiftMessage(message, brandName) {
+  const trimmed = message.trim();
+
+  if (!trimmed) {
+    return "Your translated message will appear here.";
+  }
+
+  return trimmed
+    .replaceAll("생일 축하해", "Happy birthday")
+    .replaceAll("생일축하해", "Happy birthday")
+    .replaceAll("축하해", "Congratulations")
+    .replaceAll("고마워", "Thank you")
+    .replaceAll("사랑해", "Love you")
+    .replaceAll("탬버린즈", "Tamburins")
+    .replaceAll("Tamburins", brandName)
+    .replaceAll("젠틀몬스터", "Gentle Monster")
+    .replaceAll("Gentle monster", "Gentle Monster")
+    .replaceAll("에서", " at ")
+    .replaceAll("좋아하는 향 골라봐", "pick your favorite scent")
+    .replaceAll("좋아하는", "favorite")
+    .replaceAll("향", "scent")
+    .replaceAll("골라봐", "pick one")
+    .replaceAll("선물", "gift")
+    .replaceAll("친구", "friend");
+}
+
 export default function Gift() {
   const [activeTab, setActiveTab] = useState("send");
   const [sendStep, setSendStep] = useState(1);
@@ -32,6 +58,10 @@ export default function Gift() {
   const [giftRevealed, setGiftRevealed] = useState(false);
   const [redeemed, setRedeemed] = useState(false);
   const selectedBrand = brands.find((brand) => brand.id === selectedBrandId) ?? brands[0];
+  const translatedMessage = useMemo(
+    () => translateGiftMessage(message, selectedBrand.name),
+    [message, selectedBrand.name],
+  );
   const mockUrl = "https://iic.example/gift/TB-15-FRIEND";
 
   function createGift(event) {
@@ -195,7 +225,7 @@ export default function Gift() {
                       <p className="text-xs text-[var(--iic-text-muted)]">Chrome auto translate</p>
                     </div>
                     <p className="iic-on-dark-muted mt-3 rounded-2xl border border-[var(--iic-border)] bg-black px-4 py-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-                      Happy birthday! Pick your favorite scent at Tamburins 🎁
+                      {translatedMessage}
                     </p>
                   </div>
                 </div>

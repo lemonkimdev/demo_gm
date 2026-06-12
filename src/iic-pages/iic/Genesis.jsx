@@ -206,7 +206,7 @@ export default function Genesis() {
             href="/iic/points"
             className="flex min-h-12 w-full items-center justify-center rounded-full border border-[var(--iic-gold)] px-5 py-3 text-sm font-black text-[var(--iic-gold-light)] transition hover:bg-[rgba(184,146,42,0.12)] active:scale-95"
           >
-            내 IIC 포인트 확인 →
+            내 IIC 토큰 & 포인트 확인 →
           </Link>
         </div>
       </section>

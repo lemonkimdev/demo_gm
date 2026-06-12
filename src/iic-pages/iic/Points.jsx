@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 const brandMeta = {
@@ -48,12 +47,6 @@ const historyRows = [
   ["ND", "Nudake · Pop-up visit", "+60 pts", "Nov 8"],
   ["HAUS", "HAUS NOWHERE · Seoul + Shanghai visit", "+40 pts", "Nov 3"],
   ["GM", "Gentle Monster · Sunglasses reward viewed", "0 pts", "Today"],
-];
-
-const modelLinks = [
-  ["/iic/drop", "Model 01"],
-  ["/iic/passport", "Model 02"],
-  ["/iic/subscription", "Model 03"],
 ];
 
 export default function Points() {
@@ -153,8 +146,11 @@ export default function Points() {
         </div>
       ) : null}
 
-      <section className="rounded-3xl border border-[var(--iic-border)] bg-[linear-gradient(135deg,#3a2c0b,#111_48%,#080808)] p-5 shadow-2xl shadow-black/50">
-        <div className="rounded-2xl border border-[rgba(184,146,42,0.35)] bg-black/35 p-5">
+      <section className="rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--iic-gold)]">
+          Points & Tokens
+        </p>
+        <div className="mt-4 rounded-2xl border border-[rgba(184,146,42,0.35)] bg-[linear-gradient(135deg,#3a2c0b,#111_48%,#080808)] p-5 shadow-2xl shadow-black/50">
           <p className="iic-keep-gold text-sm font-semibold text-[var(--iic-gold-light)]">
             FRIDA × Felix Edition purchased
           </p>
@@ -186,6 +182,29 @@ export default function Points() {
               </button>
             </div>
           </div>
+        </div>
+
+        <div className="mt-4 space-y-3">
+          {historyRows.map(([code, action, pts, date]) => (
+            <div
+              key={`${code}-${action}-${date}`}
+              className="flex min-h-11 items-center gap-3 rounded-2xl bg-black/30 px-3 py-3 text-sm"
+            >
+              <span
+                className="h-3 w-3 shrink-0 rounded-full"
+                style={{ background: brandMeta[code].color }}
+              />
+              <span className="min-w-0 flex-1 text-[var(--iic-text)]">
+                {action}
+              </span>
+              <span className="shrink-0 font-bold text-[var(--iic-gold-light)]">
+                {pts}
+              </span>
+              <span className="shrink-0 text-xs text-[var(--iic-text-muted)]">
+                {date}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -363,45 +382,6 @@ export default function Points() {
         </section>
       ) : null}
 
-      <section className="mt-5 rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--iic-gold)]">
-          History
-        </p>
-        <div className="mt-4 space-y-3">
-          {historyRows.map(([code, action, pts, date]) => (
-            <div
-              key={`${code}-${action}-${date}`}
-              className="flex min-h-11 items-center gap-3 rounded-2xl bg-black/30 px-3 py-3 text-sm"
-            >
-              <span
-                className="h-3 w-3 shrink-0 rounded-full"
-                style={{ background: brandMeta[code].color }}
-              />
-              <span className="min-w-0 flex-1 text-[var(--iic-text)]">
-                {action}
-              </span>
-              <span className="shrink-0 font-bold text-[var(--iic-gold-light)]">
-                {pts}
-              </span>
-              <span className="shrink-0 text-xs text-[var(--iic-text-muted)]">
-                {date}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-5 grid gap-2 sm:grid-cols-3">
-        {modelLinks.map(([href, label]) => (
-          <Link
-            key={href}
-            href={href}
-            className="min-h-11 rounded-full border border-[var(--iic-border)] px-4 py-3 text-center text-sm font-bold text-[var(--iic-text-muted)] transition active:scale-95 hover:border-[var(--iic-gold)] hover:text-[var(--iic-text)]"
-          >
-            {label}
-          </Link>
-        ))}
-      </section>
     </div>
   );
 }

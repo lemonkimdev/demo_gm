@@ -195,7 +195,7 @@ export default function Drop() {
                   className={`min-h-11 rounded-2xl border px-4 py-3 text-sm font-black transition active:scale-95 ${
                     quantity === count
                       ? "border-[var(--iic-gold)] bg-[var(--iic-gold)] text-black"
-                      : "border-[var(--iic-border)] bg-black text-[var(--iic-text)]"
+                      : "iic-on-dark border-[var(--iic-border)] bg-black text-[var(--iic-text)]"
                   }`}
                 >
                   {count}
@@ -203,9 +203,9 @@ export default function Drop() {
               ))}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-[var(--iic-border)] bg-black p-4">
-              <p className="text-sm text-[var(--iic-text-muted)]">합계</p>
-              <p className="mt-1 text-3xl font-black">${totalPrice} USDC</p>
+            <div className="iic-on-dark mt-5 rounded-2xl border border-[var(--iic-border)] bg-black p-4">
+              <p className="iic-on-dark-muted text-sm text-[var(--iic-text-muted)]">합계</p>
+              <p className="iic-on-dark mt-1 text-3xl font-black">${totalPrice} USDC</p>
             </div>
 
             <button
@@ -236,8 +236,14 @@ export default function Drop() {
           </div>
 
           <div className="rounded-3xl border border-[var(--iic-gold)] bg-[linear-gradient(145deg,#17110a,#050505)] p-5">
-            <div className="flex aspect-[1.45] items-center justify-center rounded-2xl border border-[rgba(184,146,42,0.35)] bg-black/70 text-7xl">
-              🕶️
+            <div className="relative aspect-[1.45] overflow-hidden rounded-2xl border border-[rgba(184,146,42,0.35)] bg-black/70">
+              <Image
+                src="/iic-assets/genesis-nft-card.png"
+                alt="Genesis NFT card concept"
+                fill
+                sizes="(max-width: 768px) 100vw, 720px"
+                className="object-cover"
+              />
             </div>
             <p className="mt-5 text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
               NFT Card
@@ -258,7 +264,7 @@ export default function Drop() {
             href="/iic/points"
             className="flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition active:scale-95 hover:bg-[var(--iic-gold-light)]"
           >
-            내 IIC 포인트 확인 →
+            내 IIC 토큰 & 포인트 확인 →
           </Link>
         </section>
       ) : null}

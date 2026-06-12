@@ -18,11 +18,11 @@ const metrics = [
 ];
 
 const activities = [
-  "납품 완료 · 로비 · SYLPH 2L · 11.14",
-  "향 변경 · 스파룸 · MUSK → FEY9 · 11.10",
-  "결제 완료 · $500 USDC · 11.01",
-  "레시피 갱신 · SOLACE Winter · 10.28",
-  "만족도 리포트 · 레스토랑 ★ 4.9 · 10.21",
+  "납품 완료 · 로비 · SYLPH 2L · 2026/6/15",
+  "향 변경 · 스파룸 · MUSK → FEY9 · 2026/6/12",
+  "결제 완료 · $500 USDC · 2026/6/1\n충전 완료 · $500 USDC, 스왑 완료 · 500 IIC · 2026/5/29",
+  "레시피 갱신 · SOLACE Winter · 2026/5/25",
+  "만족도 리포트 · 레스토랑 ★ 4.9 · 2026/5/18",
 ];
 
 const recipes = [
@@ -236,7 +236,7 @@ export default function B2BDashboard() {
                           <p className="text-2xl font-black">{value}</p>
                           <button
                             type="button"
-                            className="min-h-9 rounded-full border border-[#7A5AAA] px-3 text-xs font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
+                            className="min-h-10 rounded-full border border-[#7A5AAA] px-4 text-xl font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
                           >
                             IIC 스왑
                           </button>
@@ -290,7 +290,9 @@ export default function B2BDashboard() {
                       key={activity}
                       className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4 text-sm text-[var(--iic-text-muted)]"
                     >
-                      {activity}
+                      {activity.split("\n").map((line) => (
+                        <p key={line}>{line}</p>
+                      ))}
                     </div>
                   ))}
                 </div>
@@ -409,20 +411,43 @@ export default function B2BDashboard() {
                     결제 완료 ✓
                   </p>
                 ) : null}
-                <button
-                  type="button"
-                  onClick={payWithUsdc}
-                  disabled={paying || paid}
-                  className="mt-5 flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-5 py-3 text-sm font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-60"
-                >
-                  {paying ? (
-                    <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
-                  ) : paid ? (
-                    "결제 완료 ✓"
-                  ) : (
-                    "USDC로 결제하기"
-                  )}
-                </button>
+                <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                  <button
+                    type="button"
+                    onClick={payWithUsdc}
+                    disabled={paying || paid}
+                    className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-5 py-3 text-sm font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-60"
+                  >
+                    {paying ? (
+                      <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
+                    ) : paid ? (
+                      "결제 완료 ✓"
+                    ) : (
+                      "USDC로 결제하기"
+                    )}
+                  </button>
+                  <button
+                    type="button"
+                    className="min-h-12 w-full rounded-full border border-[#7A5AAA] px-5 py-3 text-sm font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
+                  >
+                    IIC로 결제하기
+                  </button>
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
+                  Additional plan
+                </p>
+                <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-3xl font-black">$500/월 IIC 구독</h3>
+                  <button
+                    type="button"
+                    className="min-h-12 rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95"
+                  >
+                    IIC 구독 신청
+                  </button>
+                </div>
               </div>
 
               <div className="iic-light-soft-panel rounded-3xl border border-[var(--iic-border)] bg-black/35 p-5">
