@@ -33,9 +33,9 @@ const recipes = [
 ];
 
 const payments = [
-  ["2024.11.01", "$500 USDC", "완료"],
-  ["2024.10.01", "$500 USDC", "완료"],
-  ["2024.09.01", "$500 USDC", "완료"],
+  ["2026/6/1", "$500 USDC", "완료"],
+  ["2026/5/1", "$500 USDC", "완료"],
+  ["2026/4/1", "$500 USDC", "완료"],
 ];
 
 const initialLocations = [
@@ -215,10 +215,11 @@ export default function B2BDashboard() {
               B2B Fragrance Concierge
             </p>
             <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-              파트너사 향 구독을 AI 운영
+              우리공간
+              <span className="align-middle text-xl">(탬버린즈 파트너사)</span> 향 구독을 AI 운영
             </h2>
             <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
-              로비, 스파, 피트니스, 레스토랑의 향 프로그램과 온체인 레시피, USDC 결제를 한 곳에서 관리합니다.
+              로비, 스파, 피트니스, 레스토랑의 향 프로그램과 온체인 레시피, USDC 결제를 대시보드로 관리
             </p>
           </div>
 
@@ -230,19 +231,7 @@ export default function B2BDashboard() {
                     key={label}
                     className="rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4"
                   >
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="text-xs text-[var(--iic-text-muted)]">{label}</p>
-                      {label === "운영 거점" ? (
-                        <a
-                          href="https://map.google.com/"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex min-h-8 items-center rounded-full border border-[#7A5AAA] px-3 text-xs font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white"
-                        >
-                          Map
-                        </a>
-                      ) : null}
-                    </div>
+                    <p className="text-xs text-[var(--iic-text-muted)]">{label}</p>
                     {label === "이번 달 결제" ? (
                       <div className="mt-2">
                         <div className="flex flex-wrap items-center gap-2">
@@ -251,12 +240,24 @@ export default function B2BDashboard() {
                             type="button"
                             className="min-h-10 rounded-full border border-[#7A5AAA] px-4 text-xl font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
                           >
-                            IIC 스왑
+                            IIC 스왑 후 결제
                           </button>
                         </div>
-                        <p className="mt-1 text-[11px] text-[var(--iic-text-muted)]">
-                          (스왑 시 수수료가 소요됩니다.)
+                        <p className="mt-1 text-right text-[11px] text-[var(--iic-text-muted)]">
+                          (스왑에 따른 할인 적용은 이벤트 기간에 따라 차이가 있으며, 스왑 시 수수료가 소요됩니다.)
                         </p>
+                      </div>
+                    ) : label === "운영 거점" ? (
+                      <div className="mt-2 flex items-center gap-2">
+                        <p className="text-2xl font-black">{value}</p>
+                        <a
+                          href="https://map.google.com/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex min-h-9 items-center rounded-full border border-[#7A5AAA] px-3 text-2xl font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white"
+                        >
+                          Map
+                        </a>
                       </div>
                     ) : (
                       <p className="mt-2 text-2xl font-black">{value}</p>
@@ -422,12 +423,12 @@ export default function B2BDashboard() {
                     결제 완료 ✓
                   </p>
                 ) : null}
-                <div className="mt-5 grid gap-2 sm:grid-cols-2">
+                <div className="mt-5 grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     onClick={payWithUsdc}
                     disabled={paying || paid}
-                    className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-5 py-3 text-sm font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-60"
+                    className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-3 py-3 text-xs font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-60 sm:text-sm"
                   >
                     {paying ? (
                       <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
@@ -439,7 +440,7 @@ export default function B2BDashboard() {
                   </button>
                   <button
                     type="button"
-                    className="min-h-12 w-full rounded-full border border-[#7A5AAA] px-5 py-3 text-sm font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
+                    className="min-h-12 w-full rounded-full bg-[#7A5AAA] px-3 py-3 text-xs font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 sm:text-sm"
                   >
                     IIC로 결제하기
                   </button>
@@ -498,7 +499,9 @@ export default function B2BDashboard() {
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--iic-gold)]">
                   Gemini Strategy Memo
                 </p>
-                <h3 className="mt-3 text-3xl font-black">AI전략</h3>
+                <h3 className="mt-3 text-3xl font-black">
+                  AI 전략 <span className="align-middle text-base">(2026/5/31 기준)</span>
+                </h3>
                 <div className="mt-5 space-y-3 text-sm leading-6 text-[var(--iic-text-muted)]">
                   <p className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4">
                     현재 대시보드 기준으로 로비는 겨울 시즌 체류 시간이 길어지는 구간입니다. SYLPH보다 SOLACE의 안정적인 우디 잔향을 적용하면 만족도 상승 가능성이 큽니다.

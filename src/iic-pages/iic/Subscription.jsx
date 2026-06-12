@@ -286,21 +286,21 @@ export default function Subscription() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="flex items-center justify-between rounded-2xl border border-[var(--iic-border)] bg-black p-3"
+                    className="iic-on-dark flex items-center justify-between rounded-2xl border border-[var(--iic-border)] bg-black p-3"
                   >
-                    <span className="text-[var(--iic-text-muted)]">{label}</span>
-                    <span className="font-black text-[var(--iic-text)]">{value}</span>
+                    <span className="iic-on-dark-muted text-[var(--iic-text-muted)]">{label}</span>
+                    <span className="iic-on-dark font-black text-[var(--iic-text)]">{value}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="grid gap-2 sm:grid-cols-2">
+            <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={startSubscription}
                 disabled={paying}
-                className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-5 py-3 text-sm font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-70"
+                className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-3 py-3 text-xs font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-70 sm:text-sm"
               >
                 {paying ? (
                   <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
@@ -312,7 +312,7 @@ export default function Subscription() {
                 type="button"
                 onClick={startSubscription}
                 disabled={paying}
-                className="flex min-h-12 w-full items-center justify-center rounded-full border border-[#7A5AAA] px-5 py-3 text-sm font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95 disabled:opacity-70"
+                className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-3 py-3 text-xs font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-70 sm:text-sm"
               >
                 IIC로 결제하기
               </button>
