@@ -336,7 +336,13 @@ export default function NfcDemoClient({
         ) : null}
 
         {error ? (
-          <p className="rounded-md border border-amber-300/30 bg-amber-300/10 p-4 text-sm text-amber-100">
+          <p
+            className={`rounded-md border p-4 text-sm font-semibold ${
+              isDark
+                ? "border-amber-300/30 bg-amber-300/10 text-amber-100"
+                : "border-amber-500/40 bg-amber-100 text-amber-900"
+            }`}
+          >
             데모 네트워크가 불안정하여 기본 추천문을 표시합니다.
           </p>
         ) : null}

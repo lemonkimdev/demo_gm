@@ -16,21 +16,21 @@ const initialCities = [
     name: "상하이",
     date: "2026.05.24",
     visited: true,
-    rotate: "rotate-3",
+    rotate: "rotate-45",
   },
   {
     id: "bangkok",
     name: "방콕",
     date: "2026.06.03",
     visited: true,
-    rotate: "-rotate-2",
+    rotate: "-rotate-45",
   },
   {
     id: "shenzhen",
     name: "뉴욕(coming soon)",
     date: "2026.06.16",
     visited: false,
-    rotate: "rotate-6",
+    rotate: "-rotate-[30deg]",
   },
 ];
 
@@ -47,6 +47,7 @@ export default function Passport() {
   const [celebrating, setCelebrating] = useState(false);
 
   const visitedCount = cities.filter((city) => city.visited).length;
+  const visitedStoreCount = visitedCount + 2;
   const grade = visitedCount >= 4 ? "Global Citizen" : visitedCount >= 3 ? "Explorer" : "Visitor";
   const isGlobalCitizen = grade === "Global Citizen";
 
@@ -155,7 +156,7 @@ export default function Passport() {
               <p className="text-sm text-[var(--iic-text-muted)]">방문 도시 수</p>
               <p className="mt-1 text-3xl font-black">{visitedCount} / 30</p>
               <p className="mt-1 text-sm font-black text-[var(--iic-text-muted)]">
-                방문 매장 수 5/84
+                방문 매장 수 {visitedStoreCount}/84
               </p>
             </div>
           </div>
@@ -272,7 +273,7 @@ export default function Passport() {
               New Benefit Unlocked
             </p>
             <h2 className="mt-3 text-3xl font-black">전 브랜드 VIP + 신제품 48h 선공개</h2>
-            <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
+            <p className="iic-on-dark-muted mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
               HAUS NOWHERE 글로벌 여권 완성 고객에게 IIC 전 브랜드 우선 접근권이 활성화되었습니다.
             </p>
           </div>

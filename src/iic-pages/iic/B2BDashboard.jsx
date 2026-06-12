@@ -78,6 +78,7 @@ export default function B2BDashboard() {
   const [locations, setLocations] = useState(initialLocations);
   const [recommendationApplied, setRecommendationApplied] = useState(false);
   const [modal, setModal] = useState(null);
+  const [noticeModal, setNoticeModal] = useState(null);
   const [paying, setPaying] = useState(false);
   const [paid, setPaid] = useState(false);
 
@@ -135,6 +136,23 @@ export default function B2BDashboard() {
       setPaying(false);
       setPaid(true);
     }, 1200);
+  }
+
+  function showSwapNotice() {
+    setNoticeModal({
+      title: "IIC 스왑 후 결제",
+      body: "자동으로 스왑 화면으로 이동합니다.",
+      autoClose: true,
+    });
+    window.setTimeout(() => setNoticeModal(null), 3000);
+  }
+
+  function showSubscriptionNotice() {
+    setNoticeModal({
+      title: "구독 신청 완료!",
+      body: "IIC 기반 추가 구독 신청이 접수되었습니다. 실서비스에서는 지갑 확인 후 정기 결제 설정으로 이어집니다.",
+      autoClose: false,
+    });
   }
 
   return (
@@ -238,6 +256,7 @@ export default function B2BDashboard() {
                           <p className="text-2xl font-black">{value}</p>
                           <button
                             type="button"
+                            onClick={showSwapNotice}
                             className="min-h-10 rounded-full border border-[#7A5AAA] px-4 text-xl font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95"
                           >
                             IIC 스왑 후 결제
@@ -463,6 +482,7 @@ export default function B2BDashboard() {
                   <h3 className="text-3xl font-black">$500/월 IIC 구독</h3>
                   <button
                     type="button"
+                    onClick={showSubscriptionNotice}
                     className="min-h-12 rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95"
                   >
                     IIC 구독 신청
@@ -550,6 +570,26 @@ export default function B2BDashboard() {
                 적용
               </button>
             </div>
+          </div>
+        </div>
+      ) : null}
+
+      {noticeModal ? (
+        <div className="fixed inset-0 z-50 flex items-end bg-black/70 p-4 sm:items-center sm:justify-center">
+          <div className="iic-fade w-full max-w-md rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-5 shadow-2xl shadow-black/80">
+            <h3 className="text-2xl font-black">{noticeModal.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
+              {noticeModal.body}
+            </p>
+            {!noticeModal.autoClose ? (
+              <button
+                type="button"
+                onClick={() => setNoticeModal(null)}
+                className="mt-5 min-h-11 w-full rounded-full bg-[var(--iic-gold)] px-4 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95"
+              >
+                닫기
+              </button>
+            ) : null}
           </div>
         </div>
       ) : null}
