@@ -186,7 +186,7 @@ export default function Genesis() {
                 판매 등록
               </button>
               <div className="pointer-events-none absolute bottom-full right-0 mb-3 w-56 rounded-2xl border border-[var(--iic-gold)] bg-[var(--iic-card)] p-3 text-xs leading-5 text-[var(--iic-text)] opacity-0 shadow-2xl shadow-black/60 transition group-hover:opacity-100 group-active:opacity-100">
-                Genesis 보유자는 평생 혜택을 잃게 됩니다. 정말로?
+                Genesis 보유자는 판매될 경우, Genesis 고유의 평생 혜택을 잃게 됩니다. 정말로 선택하시겠습니까?
               </div>
             </div>
           </div>

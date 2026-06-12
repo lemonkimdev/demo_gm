@@ -1,10 +1,13 @@
 import Link from "next/link";
 
 export default function Home() {
-  const showDemoLinks = false;
-
   return (
-    <main className="min-h-screen bg-neutral-950 px-5 py-10 text-white">
+    <main className="min-h-screen bg-neutral-950 px-5 py-5 text-white">
+      <div className="mx-auto mb-4 flex h-14 w-full max-w-md items-center justify-between">
+        <Link href="/" className="text-lg font-black tracking-[-0.02em]">
+          gmgm
+        </Link>
+      </div>
       <section className="mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-md flex-col">
         <div>
           <p className="w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-neutral-300">
@@ -14,27 +17,38 @@ export default function Home() {
             디지털 라이프 경험
           </h1>
           <p className="mt-5 text-base leading-7 text-neutral-300">
-            제공/전달하는 NFC 칩을 통해, 전체 흐름을 체험하실 수 있습니다.
+            함께 제시하는 NFC 칩/카드를 통해, 전체 흐름을 체험하실 수 있습니다.
           </p>
         </div>
 
-        {showDemoLinks ? (
-          // Temporarily hidden so visitors without NFC/direct links cannot enter demos.
-          <div className="mt-16 space-y-3">
+        <div className="mt-10 space-y-4">
+          <div className="grid grid-cols-4 gap-3">
             <Link
               href="/nfc/gm-001"
-              className="flex h-14 items-center justify-center rounded-md bg-white text-base font-semibold text-black transition hover:bg-neutral-200"
+              className="col-span-1 flex h-14 items-center justify-center rounded-md bg-white text-sm font-semibold text-black transition hover:bg-neutral-200"
             >
-              데모 열기
+              IRL BX1
             </Link>
             <Link
-              href="/setup"
-              className="flex h-14 items-center justify-center rounded-md border border-white/15 text-base font-semibold text-white transition hover:bg-white/10"
+              href="/nfc/gm-002"
+              className="col-span-1 flex h-14 items-center justify-center rounded-md bg-white text-sm font-semibold text-black transition hover:bg-neutral-200"
             >
-              NFC 설정 방법
+              IRL BX2
+            </Link>
+            <Link
+              href="/iic"
+              className="col-span-2 flex h-14 items-center justify-center rounded-md bg-[#B8922A] text-sm font-semibold text-black transition hover:bg-[#D4AC52]"
+            >
+              ON BX
             </Link>
           </div>
-        ) : null}
+          <div className="space-y-2 text-xs leading-5 text-neutral-400">
+            <p>#설명 1. IRL : In real life, BX : Brand experience</p>
+            <p>
+              #설명 2. IRL BX 경우, 특히 별도의 NFC 칩을 통해 더 직관적으로 경험하실 수 있습니다.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   );

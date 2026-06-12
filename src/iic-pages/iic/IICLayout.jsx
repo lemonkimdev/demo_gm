@@ -196,7 +196,9 @@ export default function IICLayout({ children }) {
           >
             go to Top
           </Link>
-          <div
+          <button
+            type="button"
+            onClick={() => setTheme(isDark ? "light" : "dark")}
             style={{
               minHeight: 36,
               display: "inline-flex",
@@ -205,46 +207,42 @@ export default function IICLayout({ children }) {
               borderRadius: 999,
               padding: 3,
               background: isDark ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.68)",
+              cursor: "pointer",
             }}
-            aria-label="IIC 테마 선택"
+            aria-label="IIC 테마 전환"
+            title="IIC 테마 전환"
           >
-            <button
-              type="button"
-              aria-label="라이트 모드"
-              title="라이트 모드"
-              onClick={() => setTheme("light")}
+            <span
               style={{
                 width: 30,
                 height: 30,
-                border: 0,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
                 borderRadius: 999,
-                background: !isDark ? "#ffffff" : "transparent",
-                color: !isDark ? "#111111" : "var(--iic-text-muted)",
+                background: !isDark ? "#111111" : "transparent",
+                color: !isDark ? "#ffffff" : "var(--iic-text-muted)",
                 fontSize: 14,
-                cursor: "pointer",
               }}
             >
               ☀
-            </button>
-            <button
-              type="button"
-              aria-label="다크 모드"
-              title="다크 모드"
-              onClick={() => setTheme("dark")}
+            </span>
+            <span
               style={{
                 width: 30,
                 height: 30,
-                border: 0,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
                 borderRadius: 999,
                 background: isDark ? "#ffffff" : "transparent",
                 color: isDark ? "#111111" : "var(--iic-text-muted)",
                 fontSize: 14,
-                cursor: "pointer",
               }}
             >
               ☾
-            </button>
-          </div>
+            </span>
+          </button>
         </nav>
       </header>
       <section style={{ padding: "24px 24px 40px" }}>{children}</section>

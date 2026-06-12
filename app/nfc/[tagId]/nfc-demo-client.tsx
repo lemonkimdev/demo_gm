@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   allowedStyles,
@@ -192,7 +193,9 @@ export default function NfcDemoClient({
   return (
     <main className={`min-h-screen px-4 py-5 transition-colors ${pageBg}`}>
       <div className="mx-auto mb-4 flex h-14 w-full max-w-md items-center justify-between">
-        <p className="text-lg font-black tracking-[-0.02em]">gmgm</p>
+        <Link href="/" className="text-lg font-black tracking-[-0.02em]">
+          gmgm
+        </Link>
       </div>
       <section className="mx-auto w-full max-w-md space-y-4 pb-10">
         <header className={`rounded-md border p-5 ${surface}`}>
@@ -206,37 +209,32 @@ export default function NfcDemoClient({
             >
               ANN [AI+NFT+NFC] Passport Demo
             </p>
-            <div
+            <button
+              type="button"
+              onClick={() => setTheme(isDark ? "light" : "dark")}
               className={`flex h-10 shrink-0 items-center rounded-full border p-1 ${
                 isDark
                   ? "border-white/15 bg-black/30"
                   : "border-neutral-300 bg-neutral-100"
               }`}
-              aria-label="테마 선택"
+              aria-label="테마 전환"
+              title="테마 전환"
             >
-              <button
-                type="button"
-                aria-label="라이트 모드"
-                title="라이트 모드"
-                onClick={() => setTheme("light")}
+              <span
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-sm transition ${
-                  !isDark ? "bg-white shadow-sm" : "text-neutral-400"
+                  !isDark ? "bg-neutral-950 text-white shadow-sm" : "text-neutral-400"
                 }`}
               >
                 ☀
-              </button>
-              <button
-                type="button"
-                aria-label="다크 모드"
-                title="다크 모드"
-                onClick={() => setTheme("dark")}
+              </span>
+              <span
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-sm transition ${
                   isDark ? "bg-white text-black shadow-sm" : "text-neutral-500"
                 }`}
               >
                 ☾
-              </button>
-            </div>
+              </span>
+            </button>
           </div>
           <div className="mt-8 space-y-3">
             <h1 className="text-3xl font-semibold leading-tight">
