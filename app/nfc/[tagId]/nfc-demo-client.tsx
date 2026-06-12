@@ -191,6 +191,9 @@ export default function NfcDemoClient({
 
   return (
     <main className={`min-h-screen px-4 py-5 transition-colors ${pageBg}`}>
+      <div className="mx-auto mb-4 flex h-14 w-full max-w-md items-center justify-between">
+        <p className="text-lg font-black tracking-[-0.02em]">gmgm</p>
+      </div>
       <section className="mx-auto w-full max-w-md space-y-4 pb-10">
         <header className={`rounded-md border p-5 ${surface}`}>
           <div className="flex items-start justify-between gap-3">
