@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const iicLinks = [
+  ["/iic", "Home"],
   ["/iic/drop", "Drop"],
   ["/iic/checkout", "Checkout"],
   ["/iic/points", "Points"],
@@ -14,7 +15,7 @@ const iicLinks = [
   ["/iic/subscription", "Subscription"],
   ["/iic/collectibles", "Collectibles"],
   ["/iic/genesis", "Genesis"],
-  ["/iic/b2b", "B2b"],
+  ["/iic/b2b", "B2B"],
 ];
 
 const darkIicVars = {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const linkStyle = {
-  minHeight: 44,
+  minHeight: 40,
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -11,43 +11,52 @@ const linkStyle = {
   color: "var(--iic-text)",
   fontSize: 14,
   fontWeight: 800,
-  padding: "0 16px",
+  padding: "0 15px",
   textDecoration: "none",
 };
 
-function FlowGroup({ title, subtitle, children }) {
+const tagStyle = {
+  color: "var(--iic-gold)",
+  fontSize: 12,
+  fontWeight: 800,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+};
+
+function FlowBox({ title, children }) {
   return (
     <section
       style={{
         border: "1px solid var(--iic-border)",
-        borderRadius: 24,
+        borderRadius: 28,
         background: "var(--iic-card)",
         padding: 18,
       }}
     >
-      <p
-        style={{
-          color: "var(--iic-gold)",
-          fontSize: 12,
-          fontWeight: 800,
-          letterSpacing: "0.16em",
-          textTransform: "uppercase",
-        }}
-      >
-        {subtitle}
-      </p>
-      <h2 style={{ marginTop: 8, fontSize: 22, fontWeight: 900 }}>{title}</h2>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 10,
-          marginTop: 16,
-        }}
-      >
-        {children}
-      </div>
+      <h2 style={{ fontSize: 26, fontWeight: 900 }}>{title}</h2>
+      <div style={{ display: "grid", gap: 12, marginTop: 16 }}>{children}</div>
     </section>
+  );
+}
+
+function FlowRow({ title, tag, children }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        gap: 10,
+        border: "1px solid var(--iic-border)",
+        borderRadius: 22,
+        background: "rgba(255,255,255,0.03)",
+        padding: 12,
+      }}
+    >
+      <h3 style={{ fontSize: 20, fontWeight: 900 }}>{title}</h3>
+      {tag ? <span style={tagStyle}>{tag}</span> : null}
+      {children}
+    </div>
   );
 }
 
@@ -57,10 +66,10 @@ function Arrow() {
       aria-hidden="true"
       style={{
         color: "var(--iic-gold-light)",
-        fontSize: 28,
+        fontSize: 24,
         fontWeight: 900,
-        lineHeight: "28px",
-        textAlign: "center",
+        lineHeight: "20px",
+        paddingLeft: 12,
       }}
     >
       ↓
@@ -70,7 +79,7 @@ function Arrow() {
 
 export default function Page() {
   return (
-    <div style={{ margin: "0 auto", maxWidth: 760 }}>
+    <div style={{ margin: "0 auto", maxWidth: 820 }}>
       <section
         style={{
           border: "1px solid var(--iic-border)",
@@ -94,32 +103,29 @@ export default function Page() {
         <h1
           style={{
             marginTop: 12,
-            fontSize: 38,
+            fontSize: 42,
             fontWeight: 900,
-            lineHeight: 1.08,
+            lineHeight: 1.04,
           }}
         >
-          B2C와 B2B 흐름을
-          <br />
-          한눈에 보기
+          User Flow
         </h1>
       </section>
 
-      <div style={{ marginTop: 18 }}>
-        <h2 style={{ fontSize: 24, fontWeight: 900 }}>B2C</h2>
-        <div style={{ display: "grid", gap: 12, marginTop: 12 }}>
-          <FlowGroup title="구매" subtitle="로그인 불필요">
+      <div style={{ display: "grid", gap: 18, marginTop: 18 }}>
+        <FlowBox title="B2C">
+          <FlowRow title="구매" tag="로그인 임의">
             <Link href="/iic/drop" style={linkStyle}>
               Drop
             </Link>
             <Link href="/iic/checkout" style={linkStyle}>
               Checkout
             </Link>
-          </FlowGroup>
+          </FlowRow>
 
           <Arrow />
 
-          <FlowGroup title="로그인 / 회원가입" subtitle="Account">
+          <FlowRow title="로그인/회원가입" tag="Account">
             <span
               style={{
                 ...linkStyle,
@@ -127,13 +133,13 @@ export default function Page() {
                 color: "var(--iic-text-muted)",
               }}
             >
-              Login / Signup
+              Login/Signup
             </span>
-          </FlowGroup>
+          </FlowRow>
 
           <Arrow />
 
-          <FlowGroup title="내 자산" subtitle="로그인 필요">
+          <FlowRow title="내 자산">
             <Link href="/iic/points" style={linkStyle}>
               Points
             </Link>
@@ -143,11 +149,11 @@ export default function Page() {
             <Link href="/iic/gift" style={linkStyle}>
               Gift
             </Link>
-          </FlowGroup>
+          </FlowRow>
 
           <Arrow />
 
-          <FlowGroup title="디지털 라이프" subtitle="Lifecycle">
+          <FlowRow title="디지털 라이프" tag="로그인 필요">
             <Link href="/iic/passport" style={linkStyle}>
               Passport
             </Link>
@@ -160,27 +166,16 @@ export default function Page() {
             <Link href="/iic/genesis" style={linkStyle}>
               Genesis
             </Link>
-          </FlowGroup>
-        </div>
-      </div>
+          </FlowRow>
+        </FlowBox>
 
-      <div
-        style={{
-          height: 1,
-          margin: "26px 0",
-          background: "var(--iic-border)",
-        }}
-      />
-
-      <div>
-        <h2 style={{ fontSize: 24, fontWeight: 900 }}>B2B</h2>
-        <div style={{ marginTop: 12 }}>
-          <FlowGroup title="대시보드" subtitle="Business">
+        <FlowBox title="B2B">
+          <FlowRow title="대시보드">
             <Link href="/iic/b2b" style={linkStyle}>
-              B2b
+              B2B
             </Link>
-          </FlowGroup>
-        </div>
+          </FlowRow>
+        </FlowBox>
       </div>
     </div>
   );
