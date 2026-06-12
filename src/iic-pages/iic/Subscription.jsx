@@ -295,18 +295,28 @@ export default function Subscription() {
               </div>
             </div>
 
-            <button
-              type="button"
-              onClick={startSubscription}
-              disabled={paying}
-              className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-5 py-3 text-sm font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-70"
-            >
-              {paying ? (
-                <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
-              ) : (
-                "USDC로 결제하기"
-              )}
-            </button>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={startSubscription}
+                disabled={paying}
+                className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-5 py-3 text-sm font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-70"
+              >
+                {paying ? (
+                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
+                ) : (
+                  "USDC로 결제하기"
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={startSubscription}
+                disabled={paying}
+                className="flex min-h-12 w-full items-center justify-center rounded-full border border-[#7A5AAA] px-5 py-3 text-sm font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white active:scale-95 disabled:opacity-70"
+              >
+                IIC로 결제하기
+              </button>
+            </div>
           </div>
         ) : null}
 

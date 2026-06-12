@@ -27,6 +27,17 @@ function translateGiftMessage(message, brandName) {
     return "Your translated message will appear here.";
   }
 
+  if (
+    trimmed.includes("생일 축하해") &&
+    trimmed.includes("좋아하는 향 골라봐")
+  ) {
+    return `Happy birthday! Pick your favorite scent at ${brandName} 🎁`;
+  }
+
+  if (/^[\x00-\x7F\s🎁!?.',-]+$/.test(trimmed)) {
+    return trimmed;
+  }
+
   return trimmed
     .replaceAll("생일 축하해", "Happy birthday")
     .replaceAll("생일축하해", "Happy birthday")
@@ -43,7 +54,10 @@ function translateGiftMessage(message, brandName) {
     .replaceAll("향", "scent")
     .replaceAll("골라봐", "pick one")
     .replaceAll("선물", "gift")
-    .replaceAll("친구", "friend");
+    .replaceAll("친구", "friend")
+    .replace(/[가-힣]+/g, "")
+    .replace(/\s+/g, " ")
+    .trim() || `A gift message for ${brandName}.`;
 }
 
 export default function Gift() {

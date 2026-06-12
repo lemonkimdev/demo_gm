@@ -20,7 +20,8 @@ const metrics = [
 const activities = [
   "납품 완료 · 로비 · SYLPH 2L · 2026/6/15",
   "향 변경 · 스파룸 · MUSK → FEY9 · 2026/6/12",
-  "결제 완료 · $500 USDC · 2026/6/1\n충전 완료 · $500 USDC, 스왑 완료 · 500 IIC · 2026/5/29",
+  "결제 완료 · $500 USDC · 2026/6/1",
+  "충전 완료 · $500 USDC, 스왑 완료 · 500 IIC · 2026/5/29",
   "레시피 갱신 · SOLACE Winter · 2026/5/25",
   "만족도 리포트 · 레스토랑 ★ 4.9 · 2026/5/18",
 ];
@@ -214,7 +215,7 @@ export default function B2BDashboard() {
               B2B Fragrance Concierge
             </p>
             <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight">
-              도쿄 호텔(파트너사) 향 구독을 AI 운영
+              파트너사 향 구독을 AI 운영
             </h2>
             <p className="mt-3 text-sm leading-6 text-[var(--iic-text-muted)]">
               로비, 스파, 피트니스, 레스토랑의 향 프로그램과 온체인 레시피, USDC 결제를 한 곳에서 관리합니다.
@@ -229,7 +230,19 @@ export default function B2BDashboard() {
                     key={label}
                     className="rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4"
                   >
-                    <p className="text-xs text-[var(--iic-text-muted)]">{label}</p>
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-xs text-[var(--iic-text-muted)]">{label}</p>
+                      {label === "운영 거점" ? (
+                        <a
+                          href="https://map.google.com/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex min-h-8 items-center rounded-full border border-[#7A5AAA] px-3 text-xs font-black text-[#7A5AAA] transition hover:bg-[#7A5AAA] hover:text-white"
+                        >
+                          Map
+                        </a>
+                      ) : null}
+                    </div>
                     {label === "이번 달 결제" ? (
                       <div className="mt-2">
                         <div className="flex flex-wrap items-center gap-2">
@@ -290,9 +303,7 @@ export default function B2BDashboard() {
                       key={activity}
                       className="rounded-2xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-4 text-sm text-[var(--iic-text-muted)]"
                     >
-                      {activity.split("\n").map((line) => (
-                        <p key={line}>{line}</p>
-                      ))}
+                      {activity}
                     </div>
                   ))}
                 </div>
