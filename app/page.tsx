@@ -3,8 +3,18 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const themeStorageKey = "gmgm-theme";
+type Theme = "dark" | "light";
+
 export default function Home() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    return savedTheme === "dark" || savedTheme === "light" ? savedTheme : "dark";
+  });
   const isDark = theme === "dark";
   const pageClass = isDark
     ? "bg-neutral-950 text-white"
@@ -17,6 +27,12 @@ export default function Home() {
     ? "bg-white text-black hover:bg-neutral-200"
     : "bg-neutral-950 text-white hover:bg-neutral-800";
 
+  function toggleTheme() {
+    const nextTheme = isDark ? "light" : "dark";
+    setTheme(nextTheme);
+    window.localStorage.setItem(themeStorageKey, nextTheme);
+  }
+
   return (
     <main className={`min-h-screen px-5 py-5 transition-colors ${pageClass}`}>
       <div className="mx-auto mb-4 flex h-14 w-full max-w-md items-center justify-between">
@@ -25,7 +41,7 @@ export default function Home() {
         </Link>
         <button
           type="button"
-          onClick={() => setTheme(isDark ? "light" : "dark")}
+          onClick={toggleTheme}
           className={`flex h-10 shrink-0 items-center rounded-full border p-1 ${
             isDark
               ? "border-white/15 bg-black/30"
@@ -85,7 +101,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={`space-y-2 text-xs leading-5 ${isDark ? "text-neutral-400" : "text-neutral-600"}`}>
-            <p>#설명 1. IRL : In real life, BX : Brand experience</p>
+            <p>#설명 1. IRL : In real life, BX : Brand experience, ON : Online</p>
             <p>
               #설명 2. IRL BX 경우, 특히 별도의 NFC 칩을 통해 더 직관적으로 경험하실 수 있습니다.
             </p>

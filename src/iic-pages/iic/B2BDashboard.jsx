@@ -440,9 +440,17 @@ export default function B2BDashboard() {
                   </button>
                   <button
                     type="button"
-                    className="min-h-12 w-full rounded-full bg-[#7A5AAA] px-3 py-3 text-xs font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 sm:text-sm"
+                    onClick={payWithUsdc}
+                    disabled={paying || paid}
+                    className="flex min-h-12 w-full items-center justify-center rounded-full bg-[#7A5AAA] px-3 py-3 text-xs font-black text-white transition hover:bg-[#8d6cc0] active:scale-95 disabled:opacity-60 sm:text-sm"
                   >
-                    IIC로 결제하기
+                    {paying ? (
+                      <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/25 border-t-white" />
+                    ) : paid ? (
+                      "결제 완료 ✓"
+                    ) : (
+                      "IIC로 결제하기"
+                    )}
                   </button>
                 </div>
               </div>

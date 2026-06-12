@@ -25,6 +25,9 @@ type RecommendationState = {
   usedFallback: boolean;
 };
 
+const themeStorageKey = "gmgm-theme";
+type Theme = "dark" | "light";
+
 function PlaceholderVisual({
   label,
   imageUrl,
@@ -73,7 +76,14 @@ export default function NfcDemoClient({
   userName,
   purchasedProduct,
 }: Props) {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    return savedTheme === "dark" || savedTheme === "light" ? savedTheme : "dark";
+  });
   const [claimOpen, setClaimOpen] = useState(false);
   const [descriptionOpen, setDescriptionOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -95,6 +105,12 @@ export default function NfcDemoClient({
   const primaryButton = isDark
     ? "bg-white text-black hover:bg-neutral-200"
     : "bg-black text-white hover:bg-neutral-800";
+
+  function toggleTheme() {
+    const nextTheme = isDark ? "light" : "dark";
+    setTheme(nextTheme);
+    window.localStorage.setItem(themeStorageKey, nextTheme);
+  }
 
   async function selectStyle(style: StyleName) {
     const product = getRecommendedProduct(style);
@@ -211,7 +227,7 @@ export default function NfcDemoClient({
             </p>
             <button
               type="button"
-              onClick={() => setTheme(isDark ? "light" : "dark")}
+              onClick={toggleTheme}
               className={`flex h-10 shrink-0 items-center rounded-full border p-1 ${
                 isDark
                   ? "border-white/15 bg-black/30"

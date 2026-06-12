@@ -19,6 +19,9 @@ type ModalState = {
   message: string;
 };
 
+const themeStorageKey = "gmgm-theme";
+type Theme = "dark" | "light";
+
 const modalMessages = {
   purchase: {
     title: "원클릭 구매",
@@ -42,7 +45,14 @@ const modalMessages = {
 } satisfies Record<string, ModalState>;
 
 export default function BeautyPassportDemo() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    return savedTheme === "dark" || savedTheme === "light" ? savedTheme : "dark";
+  });
   const [loggedIn, setLoggedIn] = useState(false);
   const [captured, setCaptured] = useState(false);
   const [modal, setModal] = useState<ModalState | null>(null);
@@ -61,6 +71,12 @@ export default function BeautyPassportDemo() {
     ? "bg-[#fbf7ef] text-neutral-950 hover:bg-white"
     : "bg-neutral-950 text-white hover:bg-neutral-800";
 
+  function toggleTheme() {
+    const nextTheme = isDark ? "light" : "dark";
+    setTheme(nextTheme);
+    window.localStorage.setItem(themeStorageKey, nextTheme);
+  }
+
   return (
     <main className={`min-h-screen px-4 py-5 transition-colors ${pageClass}`}>
       <div className="mx-auto mb-4 flex h-14 w-full max-w-md items-center justify-between">
@@ -77,7 +93,7 @@ export default function BeautyPassportDemo() {
             <div className="flex shrink-0 items-center gap-2">
               <button
                 type="button"
-                onClick={() => setTheme(isDark ? "light" : "dark")}
+                onClick={toggleTheme}
                 className={`flex h-10 items-center rounded-full border p-1 ${
                   isDark
                     ? "border-neutral-300 bg-neutral-100"

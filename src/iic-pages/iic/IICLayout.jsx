@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+const themeStorageKey = "gmgm-theme";
+
 const iicLinks = [
   ["/iic", "Home"],
   ["/iic/drop", "Drop"],
@@ -40,10 +42,23 @@ const lightIicVars = {
 
 export default function IICLayout({ children }) {
   const pathname = usePathname();
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    return savedTheme === "dark" || savedTheme === "light" ? savedTheme : "dark";
+  });
   const isDark = theme === "dark";
   const iicVars = isDark ? darkIicVars : lightIicVars;
   const headerBg = isDark ? "rgba(8, 8, 8, 0.96)" : "rgba(244, 244, 244, 0.96)";
+
+  function toggleTheme() {
+    const nextTheme = isDark ? "light" : "dark";
+    setTheme(nextTheme);
+    window.localStorage.setItem(themeStorageKey, nextTheme);
+  }
 
   return (
     <main
@@ -198,7 +213,7 @@ export default function IICLayout({ children }) {
           </Link>
           <button
             type="button"
-            onClick={() => setTheme(isDark ? "light" : "dark")}
+            onClick={toggleTheme}
             style={{
               minHeight: 36,
               display: "inline-flex",
