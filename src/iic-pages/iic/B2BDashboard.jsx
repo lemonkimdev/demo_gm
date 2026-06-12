@@ -27,7 +27,7 @@ const activities = [
 ];
 
 const recipes = [
-  ["SYLPH Recipe v2", "0x3f2a...", "2026.12"],
+  ["SYLPH Recipe v2", "0x3f2a...", "2026.06"],
   ["MUSK Classic", "0x8b1c...", "2026.06"],
   ["SOLACE Winter", "0x5e9d...", "2027.03"],
 ];
@@ -35,7 +35,7 @@ const recipes = [
 const payments = [
   ["2026/6/1", "$500 USDC", "완료"],
   ["2026/5/1", "$500 USDC", "완료"],
-  ["2026/4/1", "$500 USDC", "완료"],
+  ["2026/5/15", "$500 USDC", "완료"],
 ];
 
 const initialLocations = [

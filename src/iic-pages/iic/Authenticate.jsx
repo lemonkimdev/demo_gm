@@ -5,22 +5,22 @@ import { useEffect, useState } from "react";
 const timeline = [
   {
     label: "제조",
-    date: "2023.03",
+    date: "2026.05",
     wallet: "GM Factory",
   },
   {
     label: "1번째 소유자",
-    date: "2023.04",
+    date: "2026.05",
     wallet: "0x8f2a...91c0",
   },
   {
     label: "2번째 소유자",
-    date: "2024.01",
+    date: "2026.06",
     wallet: "0x41bd...7e22",
   },
   {
     label: "현재 소유자",
-    date: "Now",
+    date: "2026.06",
     wallet: "0x1a2b...9z",
   },
 ];
@@ -140,7 +140,7 @@ export default function Authenticate() {
                 <input
                   value={serial}
                   onChange={(event) => setSerial(event.target.value)}
-                  placeholder="예) GM-2023-FR-0042"
+                  placeholder="예) GM-2026-FR-0042"
                   className="iic-on-dark min-h-12 w-full rounded-2xl border border-[var(--iic-border)] bg-black px-4 text-sm text-[var(--iic-text)] outline-none transition placeholder:text-neutral-400 focus:border-[var(--iic-gold)]"
                 />
                 <button className="min-h-12 w-full rounded-full bg-[var(--iic-gold)] px-5 py-3 text-sm font-black text-black transition hover:bg-[var(--iic-gold-light)] active:scale-95">
@@ -170,11 +170,11 @@ export default function Authenticate() {
 
               {isAuthentic ? (
                 <div className="mt-5 rounded-3xl border border-[var(--iic-border)] bg-[var(--iic-card)] p-5">
-                  <h2 className="text-2xl font-black">FRIDA · 2023 시즌</h2>
+                  <h2 className="text-2xl font-black">FRIDA · 2026 시즌</h2>
                   <div className="mt-4 grid gap-3 text-sm">
                     {[
                       ["출시 소비자가", "$320"],
-                      ["제조일", "2023년 3월"],
+                      ["제조일", "2026년 5월"],
                       ["블록체인 기록", "0x7c2e...4a91"],
                     ].map(([label, value]) => (
                       <div

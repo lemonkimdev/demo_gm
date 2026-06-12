@@ -38,7 +38,7 @@ const collectibles = [
   },
   {
     season: "Seoul Scent Pass",
-    date: "2026.04",
+    date: "2026.05",
     rarity: "Epic",
   },
 ];

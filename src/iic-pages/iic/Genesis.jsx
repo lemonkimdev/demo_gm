@@ -11,15 +11,15 @@ const benefits = [
 ];
 
 const activities = [
-  "HAUS NOWHERE 서울 방문 · SBT 발행 · 11.12",
-  "FRIDA 컬렉션 열람 · 응시 3분 · 11.13",
-  "SYLPH 향수 UCP 결제 · $80 USDC · 11.14",
+  "HAUS NOWHERE 서울 방문 · SBT 발행 · 2026/6/12",
+  "FRIDA 컬렉션 열람 · 응시 3분 · 2026/6/13",
+  "SYLPH 향수 UCP 결제 · $80 USDC · 2026/6/14",
 ];
 
 const details = [
   ["컨트랙트", "0x4f7a... (Ethereum L2)"],
   ["토큰 ID", "42"],
-  ["민팅일", "2026.11.10"],
+  ["민팅일", "2026.06.10"],
   ["구매가", "$500 USDC"],
 ];
 

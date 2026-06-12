@@ -7,28 +7,28 @@ const initialCities = [
   {
     id: "seoul",
     name: "서울",
-    date: "2024.09.06",
+    date: "2026.05.12",
     visited: true,
     rotate: "-rotate-6",
   },
   {
     id: "shanghai",
     name: "상하이",
-    date: "2024.10.15",
+    date: "2026.05.24",
     visited: true,
     rotate: "rotate-3",
   },
   {
     id: "bangkok",
     name: "방콕",
-    date: "2024.11.03",
+    date: "2026.06.03",
     visited: true,
     rotate: "-rotate-2",
   },
   {
     id: "shenzhen",
     name: "뉴욕(coming soon)",
-    date: "2024.12.18",
+    date: "2026.06.16",
     visited: false,
     rotate: "rotate-6",
   },
@@ -284,8 +284,8 @@ export default function Passport() {
           </p>
           <div className="mt-4 grid gap-3 text-sm">
             {[
-              ["토큰 ID", "#GMT-2024-0892"],
-              ["발행일", "2024.09.06"],
+              ["토큰 ID", "#GMT-2026-0892"],
+              ["발행일", "2026.06.16"],
               ["이전 불가 배지", "Non-transferable"],
             ].map(([label, value]) => (
               <div

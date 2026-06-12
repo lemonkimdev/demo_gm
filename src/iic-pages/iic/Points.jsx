@@ -42,11 +42,11 @@ const brandMeta = {
 };
 
 const historyRows = [
-  ["GM", "Gentle Monster · Drop purchase", "+240 pts", "Nov 14"],
-  ["TB", "Tamburins · Subscription bonus", "+180 pts", "Nov 10"],
-  ["ND", "Nudake · Pop-up visit", "+60 pts", "Nov 8"],
-  ["HAUS", "HAUS NOWHERE · Seoul + Shanghai visit", "+40 pts", "Nov 3"],
-  ["GM", "Gentle Monster · Sunglasses reward viewed", "0 pts", "Today"],
+  ["GM", "Gentle Monster · Drop purchase", "+240 pts", "2026/6/16"],
+  ["TB", "Tamburins · Subscription bonus", "+180 pts", "2026/6/10"],
+  ["ND", "Nudake · Pop-up visit", "+60 pts", "2026/6/8"],
+  ["HAUS", "HAUS NOWHERE · Seoul + Shanghai visit", "+40 pts", "2026/5/24"],
+  ["GM", "Gentle Monster · Sunglasses reward viewed", "0 pts", "2026/6/16"],
 ];
 
 export default function Points() {
